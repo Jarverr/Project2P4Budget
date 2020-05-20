@@ -6,8 +6,29 @@
         xmlns:local="clr-namespace:Project2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="265,138,0,0" VerticalAlignment="Top" Width="273" Height="153" Click="Button_Click"/>
+    <Border Padding="10 5 10 5">
+        <StackPanel>
+            <Label Content="Dzień dobry! :) Dobrze Cię widzieć, fajnie że jesteś - uśmiechnij się! Proszę."  FontSize="20" FontWeight="Bold" FontFamily="Book Antiqua"/>
+            <Label Content="Budżet domowy 2021" Margin="0 0 0 25" FontWeight="Heavy" FontSize="15"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="300"/>
+                </Grid.RowDefinitions>
+                
+                
+                <Label Content="Sprawdź obecny stan budżetu domowego:" Grid.Column="0" Margin="10 0"  />
+                <Button Content="Sprawdź" Grid.Column="0" Margin="100 30 100 220" Click="Button_Click_1"/>
+                <Label Content="Wprowadź nowe rachunki/ przychody do Twojego budżetu:" Grid.Column="1" Margin="10 0" />
+                <Button Content="Wstaw" Grid.Column="1" Margin="100 30 100 220"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="511,257,0,0" VerticalAlignment="Top" Width="273" Height="153" Click="Button_Click"/>
+       
+            </Grid>
+        </StackPanel>
 
-    </Grid>
+    </Border>
+
 </Window>

@@ -57,5 +57,12 @@ namespace Project2
                 createDB.SaveChanges();
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Check check = new Check();
+            check.Show();
+            this.Close();
+        }
     }
 }
