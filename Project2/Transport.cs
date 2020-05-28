@@ -10,9 +10,25 @@ namespace Project2
 {
     public class Transport
     {
-        public Transport(int idTransport, double paliwoSamochod, double przegladNaprawa, double wyposazenie, double dodatkoweUbezp, double biletyKomunikacjiMiejskiej, double biletyPKPPKS, double taxi, double inne, Budget budget)
+        public Transport()
         {
-            IdTransport = idTransport;
+
+        }
+        public Transport(decimal paliwoSamochod, decimal przegladNaprawa, decimal wyposazenie, decimal dodatkoweUbezp, decimal biletyKomunikacjiMiejskiej, decimal biletyPKPPKS, decimal taxi, decimal inne)
+        {
+            PaliwoSamochod = paliwoSamochod;
+            PrzegladNaprawa = przegladNaprawa;
+            Wyposazenie = wyposazenie;
+            DodatkoweUbezp = dodatkoweUbezp;
+            BiletyKomunikacjiMiejskiej = biletyKomunikacjiMiejskiej;
+            BiletyPKPPKS = biletyPKPPKS;
+            Taxi = taxi;
+            Inne = inne;
+        }
+
+        public Transport( decimal paliwoSamochod, decimal przegladNaprawa, decimal wyposazenie, decimal dodatkoweUbezp, decimal biletyKomunikacjiMiejskiej, decimal biletyPKPPKS, decimal taxi, decimal inne, Budget budget)
+        {
+            //IdTransport = idTransport;
             PaliwoSamochod = paliwoSamochod;
             PrzegladNaprawa = przegladNaprawa;
             Wyposazenie = wyposazenie;
@@ -27,30 +43,30 @@ namespace Project2
         [Key]
         [ForeignKey("Budget")]
         public int IdTransport { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double PaliwoSamochod { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal PaliwoSamochod { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double PrzegladNaprawa { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal PrzegladNaprawa { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Wyposazenie { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Wyposazenie { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double DodatkoweUbezp { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal DodatkoweUbezp { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double BiletyKomunikacjiMiejskiej { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal BiletyKomunikacjiMiejskiej { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double BiletyPKPPKS { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal BiletyPKPPKS { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Taxi { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Taxi { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Inne { get; set; }
+        public decimal Inne { get; set; }
         public virtual Budget Budget { get; set; }
 
     }

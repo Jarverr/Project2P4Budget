@@ -5,28 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Hello there :)" Height="450" Width="800">
     <Border Padding="10 5 10 5">
         <StackPanel>
             <Label Content="Dzień dobry! :) Dobrze Cię widzieć, fajnie że jesteś - uśmiechnij się! Proszę."  FontSize="20" FontWeight="Bold" FontFamily="Book Antiqua"/>
-            <Label Content="Budżet domowy 2021" Margin="0 0 0 25" FontWeight="Heavy" FontSize="15"></Label>
+            <Label x:Name="TitleOfProgram" Content="Budżet domowy " Margin="0 0 0 25" FontWeight="Heavy" FontSize="15"></Label>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="300"/>
-                </Grid.RowDefinitions>
-                
-                
-                <Label Content="Sprawdź obecny stan budżetu domowego:" Grid.Column="0" Margin="10 0"  />
-                <Button Content="Sprawdź" Grid.Column="0" Margin="100 30 100 220" Click="Button_Click_1"/>
-                <Label Content="Wprowadź nowe rachunki/ przychody do Twojego budżetu:" Grid.Column="1" Margin="10 0" />
-                <Button Content="Wstaw" Grid.Column="1" Margin="100 30 100 220"/>
-                <Button Content="Button" HorizontalAlignment="Left" Margin="511,257,0,0" VerticalAlignment="Top" Width="273" Height="153" Click="Button_Click"/>
-       
+
+                <StackPanel Grid.Column="0">
+                    <Label Content="Przejdź do przeglądu Budżetu Domowego:"  Margin="10 0" HorizontalAlignment="Center" FontSize="15"/>
+                    <Button Content="Przejdź" Padding="10" FontSize="18" FontWeight="Black" HorizontalAlignment="Center" Margin="0 30" Click="Button_Click_1" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Label Content="Przejdź do zarządzania swoim Budżetem Domowym:"  Margin="10 0" HorizontalAlignment="Center" FontSize="15"/>
+                    <Button Content="Przejdź" Padding="10" FontSize="18" FontWeight="Black" HorizontalAlignment="Center" Margin="0 30" Click="Button_Click_2" />
+                </StackPanel>
             </Grid>
+            <ProgressBar x:Name="ProgressBarCreation" Height="20" Margin="100 0"></ProgressBar>
         </StackPanel>
 
     </Border>

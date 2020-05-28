@@ -66,21 +66,48 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BudgetContext.cs" />
-    <Compile Include="Check.xaml.cs">
-      <DependentUpon>Check.xaml</DependentUpon>
+    <Compile Include="BudowanieOszczednosci.cs" />
+    <Compile Include="Chart.xaml.cs">
+      <DependentUpon>Chart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DateControl.xaml.cs">
+      <DependentUpon>DateControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dlugi.cs" />
     <Compile Include="Dzieci.cs" />
     <Compile Include="Higiena.cs" />
     <Compile Include="InneWydatki.cs" />
+    <Compile Include="InsertDate.xaml.cs">
+      <DependentUpon>InsertDate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mieszkanie.cs" />
     <Compile Include="Przychody.cs" />
     <Compile Include="Rozrywka.cs" />
     <Compile Include="Telekomunikacja.cs" />
     <Compile Include="Transport.cs" />
     <Compile Include="Ubrania.cs" />
+    <Compile Include="ViewsModel\ChartsModel.cs" />
+    <Compile Include="ViewsModel\CheckingDateModel.cs" />
+    <Compile Include="ViewsModel\ModyfingDateModel.cs" />
+    <Compile Include="Views\Charts.xaml.cs">
+      <DependentUpon>Charts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckingDate.xaml.cs">
+      <DependentUpon>CheckingDate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModyfingDate.xaml.cs">
+      <DependentUpon>ModyfingDate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Zdrowie.cs" />
-    <Page Include="Check.xaml">
+    <Page Include="Chart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InsertDate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,6 +125,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Charts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CheckingDate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ModyfingDate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

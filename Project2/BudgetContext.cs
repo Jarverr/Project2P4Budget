@@ -15,6 +15,7 @@ namespace Project2
         }
 
         public DbSet<Budget> Budżet { get; set; }
+        public DbSet<BudowanieOszczednosci> BudowanieOszczednoscis { get; set; }
         public DbSet<Dlugi> Długiiii { get; set; }
         public DbSet<Dzieci> Dzieciaki { get; set; }
         public DbSet<Higiena> Higieny { get; set; }

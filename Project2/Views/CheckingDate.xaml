@@ -1,0 +1,207 @@
+﻿<UserControl x:Class="Project2.Views.CheckingDate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project2.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="Window_Loaded">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+        
+        <!-- wyświetlanie danych i filtry -->
+
+
+        <!-- Wyświetlanie danych -->
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto"  Grid.Column="0" >
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" >
+                    <!--Przychody-->
+
+                    <TextBlock Text="Przychody: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Wynagrodzenie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Wynagrodzenie partnera(-ki): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Premia: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Przychody z premii bankowych: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Odsetki bankowe: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Sprzedaż Allegro (itp): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne przychody (itp): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Jedzenie -->
+                    <TextBlock Text="Jedzenie: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Jedzenie dom: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Jedzenie miasto: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Jedzenie praca: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Alkohol: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Mieszkanie -->
+                    <TextBlock Text="Mieszkanie: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Czynsz: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Woda i kanalizacja: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Prąd: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Gaz: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Ogrzewanie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Wywóz śmieci: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Konserwacja i naprawy: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Wyposażenie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Ubezpieczenie nieruchomości: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Transport-->
+                    <TextBlock Text="Transport: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Paliwo do auta: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Przegląd i naprawa auta: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Wyposażenie dodatkowe (opony): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Ubezpiecznie samochodu: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Bilet komunikacji miejskiej: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Bilet PKS/ PKP: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Taxi: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Telekomunikacja-->
+                    <TextBlock Text="Telekomunikacja: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Telefon 1: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Telefon 2: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="TV: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Internet: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Opieka zdrowotna-->
+                    <TextBlock Text="Opieka zdrowotna: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Lekarz: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Badania: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Lekarstwa: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Ubranie-->
+                    <TextBlock Text="Ubranie: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Ubranie zwykłe: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Ubranie sportowe: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Buty: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Dodatki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Higiena-->
+                    <TextBlock Text="Higiena: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Kosemtyki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Środki czystości (chemia): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Fryzjer: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Kosemtyczka: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Dzieci-->
+                    <TextBlock Text="Dzieci: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Artykuły szkolne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Dodatkowe zajęcia: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Wpłaty na szkołę: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Zabawki/ gry: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Opieka nad dziećmi: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Rozrywka-->
+                    <TextBlock Text="Rozrywka: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Siłownia/ basen: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Kino/ teartr: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Koncerty: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Czasopisma: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Książki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Hobby: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Hotel/ Turystyka: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Inne wydatki-->
+                    <TextBlock Text="Inne wydatki: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Dobroczynność: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Prezenty: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Sprzęt RTV: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Oprogramowanie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Edukacje/ szkolenia: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Usługi inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Podatki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <!--Spłata długów-->
+                    <TextBlock Text="Spłata długów: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Kredyt hipoteczny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 10 10 0"/>
+                    <TextBlock Text="Kredyt konsumpcyjny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 10 10 0"/>
+                    <TextBlock Text="Pożyczka osobista: " FontSize="12"  HorizontalAlignment="Right" Margin="0 10 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 10 10 0"/>
+
+                    <!--Budowanie oszczędności-->
+                    <TextBlock Text="Budowanie oszczędności: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                    <TextBlock Text="Fundusz awaryjny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                    <TextBlock Text="Fundusz wydatków nieregularnych: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Podusza finansowa: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Konto emerytalne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Nadpłata długów: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Fundusz wakacyjny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Fundusz prezentów świątecznych: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+
+                </StackPanel>
+
+                <!-- kwoty -->
+                <StackPanel Grid.Column="1">
+                    <!-- przychody -->
+                    <TextBlock x:Name="TextBlockProfit" Margin="0 22 0 0" />
+                    <TextBlock Text="test"/>
+                    <TextBlock Text="test"/>
+                    <TextBlock Text="test"/>
+                    <TextBlock Text="test"/>
+                    <TextBlock Text="test"/>
+                    <TextBlock Text="test"/>
+
+                    <!--jedzenie-->
+                    <TextBlock Text="test" Margin="0 22 0 0" />
+                    <TextBlock Text="test" />
+                    <TextBlock Text="test" />
+                    <TextBlock Text="test" />
+                    <TextBlock Text="test" />
+
+                    <!--Mieszkanie-->
+                    <TextBlock Text="test" Margin="0 22 0 0" />
+                    <TextBlock Text="test" />
+                    <TextBlock Text="test" />
+                    <TextBlock Text="test" />
+                    <TextBlock Text="test" />
+
+                </StackPanel>
+
+
+            </Grid>
+        </ScrollViewer>
+
+
+        <!-- Filtry -->
+        <StackPanel Grid.Column="1" Orientation="Vertical"  >
+            <TextBlock Text="Filtry: " FontSize="13" Margin="0 0 0 10" />
+            <CheckBox Content="Zaznacz wszystkie" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Przychody" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Jedzenie" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Transport" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Mieszkanie" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Telekomunikacja" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Zdrowie" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Ubranie" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Higiena" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Dzieci" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Rozrywka" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Długi" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox Content="Inne" Margin="5 0 0 0" IsChecked="True"/>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

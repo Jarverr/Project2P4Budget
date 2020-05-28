@@ -10,9 +10,22 @@ namespace Project2
 {
     public class Telekomunikacja
     {
-        public Telekomunikacja(int idTelekomunikacja, double telefon1, double telefon2, double tv, double internet, double inne, Budget budget)
+        public Telekomunikacja()
         {
-            IdTelekomunikacja = idTelekomunikacja;
+
+        }
+        public Telekomunikacja(decimal telefon1, decimal telefon2, decimal tv, decimal internet, decimal inne)
+        {
+            Telefon1 = telefon1;
+            Telefon2 = telefon2;
+            Tv = tv;
+            Internet = internet;
+            Inne = inne;
+        }
+
+        public Telekomunikacja(decimal telefon1, decimal telefon2, decimal tv, decimal internet, decimal inne, Budget budget)
+        {
+            //IdTelekomunikacja = idTelekomunikacja;
             Telefon1 = telefon1;
             Telefon2 = telefon2;
             Tv = tv;
@@ -24,21 +37,21 @@ namespace Project2
         [Key]
         [ForeignKey("Budget")]
         public int IdTelekomunikacja { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Telefon1 { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Telefon1 { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Telefon2 { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Telefon2 { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Tv { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Tv { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Internet { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Internet { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Inne { get; set; }
+        public decimal Inne { get; set; }
         public virtual Budget Budget { get; set; }
 
     }

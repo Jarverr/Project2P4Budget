@@ -9,13 +9,34 @@ namespace Project2
 {
     public class Budget
     {
+        public Budget()
+        {
+
+        }
         public Budget(int rok, int miesiąc)
         {
             Rok = rok;
             Miesiąc = miesiąc;
         }
 
-        public Budget(int rok, int miesiąc, Jedzenie jedzenie, Przychody przychody, Transport transport, Mieszkanie mieszkanie, Telekomunikacja telekomunikacja, Zdrowie zdrowie, Ubrania ubrania, Higiena higiena, Dzieci dzieci, Rozrywka rozrywka, Dlugi dlugi, InneWydatki idInne)
+        public Budget(Jedzenie jedzenie, Przychody przychody, Transport transport, Mieszkanie mieszkanie, Telekomunikacja telekomunikacja, Zdrowie zdrowie, Ubrania ubrania, Higiena higiena, Dzieci dzieci, Rozrywka rozrywka, Dlugi dlugi, InneWydatki inneWydatki, BudowanieOszczednosci budowanieOszczednosci)
+        {
+            Jedzenie = jedzenie;
+            Przychody = przychody;
+            Transport = transport;
+            Mieszkanie = mieszkanie;
+            Telekomunikacja = telekomunikacja;
+            Zdrowie = zdrowie;
+            Ubrania = ubrania;
+            Higiena = higiena;
+            Dzieci = dzieci;
+            Rozrywka = rozrywka;
+            Dlugi = dlugi;
+            InneWydatki = inneWydatki;
+            BudowanieOszczednosci = budowanieOszczednosci;
+        }
+
+        public Budget(int rok, int miesiąc, Jedzenie jedzenie, Przychody przychody, Transport transport, Mieszkanie mieszkanie, Telekomunikacja telekomunikacja, Zdrowie zdrowie, Ubrania ubrania, Higiena higiena, Dzieci dzieci, Rozrywka rozrywka, Dlugi dlugi, InneWydatki idInne, BudowanieOszczednosci BudOsz)
         {
             Rok = rok;
             Miesiąc = miesiąc;
@@ -31,11 +52,11 @@ namespace Project2
             Rozrywka = rozrywka;
             Dlugi = dlugi;
             InneWydatki = idInne;
+            BudowanieOszczednosci = BudOsz;
         }
-        
-        [Key]
+
+        public int Id { get; set; }
         public int Rok  { get; set; }
-        [Key]
         public int Miesiąc { get; set; }
         public virtual Jedzenie Jedzenie { get; set; }
         public virtual Przychody Przychody { get; set; }
@@ -49,5 +70,6 @@ namespace Project2
         public virtual Rozrywka Rozrywka { get; set; }
         public virtual Dlugi Dlugi { get; set; }
         public virtual InneWydatki InneWydatki { get; set; }
+        public virtual BudowanieOszczednosci BudowanieOszczednosci { get; set; }
     }
 }

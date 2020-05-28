@@ -10,9 +10,22 @@ namespace Project2
 {
     public class Ubrania
     {
-        public Ubrania(int idUbrania, double zwykleUbrania, double sportoweUbrania, double buty, double dodatki, double inne, Budget budget)
+        public Ubrania()
         {
-            IdUbrania = idUbrania;
+
+        }
+        public Ubrania(decimal zwykleUbrania, decimal sportoweUbrania, decimal buty, decimal dodatki, decimal inne)
+        {
+            ZwykleUbrania = zwykleUbrania;
+            SportoweUbrania = sportoweUbrania;
+            Buty = buty;
+            Dodatki = dodatki;
+            Inne = inne;
+        }
+
+        public Ubrania( decimal zwykleUbrania, decimal sportoweUbrania, decimal buty, decimal dodatki, decimal inne, Budget budget)
+        {
+            //IdUbrania = idUbrania;
             ZwykleUbrania = zwykleUbrania;
             SportoweUbrania = sportoweUbrania;
             Buty = buty;
@@ -24,21 +37,21 @@ namespace Project2
         [Key]
         [ForeignKey("Budget")]
         public int IdUbrania { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double ZwykleUbrania { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal ZwykleUbrania { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double SportoweUbrania { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal SportoweUbrania { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Buty { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Buty { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Dodatki { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Dodatki { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Inne { get; set; }
+        public decimal Inne { get; set; }
         public virtual Budget Budget { get; set; }
 
     }

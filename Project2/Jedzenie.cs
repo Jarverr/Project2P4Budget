@@ -10,9 +10,22 @@ namespace Project2
 {
     public class Jedzenie
     {
-        public Jedzenie(int idJedzenie, double jedzenieDom, double jedzenieMiasto, double jedzeniePraca, double alkohol, double inne, Budget budget)
+        public Jedzenie()
         {
-            IdJedzenie = idJedzenie;
+
+        }
+        public Jedzenie(decimal jedzenieDom, decimal jedzenieMiasto, decimal jedzeniePraca, decimal alkohol, decimal inne)
+        {
+            JedzenieDom = jedzenieDom;
+            JedzenieMiasto = jedzenieMiasto;
+            JedzeniePraca = jedzeniePraca;
+            Alkohol = alkohol;
+            Inne = inne;
+        }
+
+        public Jedzenie( decimal jedzenieDom, decimal jedzenieMiasto, decimal jedzeniePraca, decimal alkohol, decimal inne, Budget budget)
+        {
+            //IdJedzenie = idJedzenie;
             JedzenieDom = jedzenieDom;
             JedzenieMiasto = jedzenieMiasto;
             JedzeniePraca = jedzeniePraca;
@@ -24,21 +37,21 @@ namespace Project2
         [Key]
         [ForeignKey("Budget")]
         public int IdJedzenie { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double JedzenieDom { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal JedzenieDom { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double JedzenieMiasto { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal JedzenieMiasto { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double JedzeniePraca { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal JedzeniePraca { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Alkohol { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Alkohol { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Inne { get; set; }
+        public decimal Inne { get; set; }
         public virtual Budget Budget { get; set; }
 
     }

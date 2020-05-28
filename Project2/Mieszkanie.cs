@@ -10,12 +10,31 @@ namespace Project2
 {
     public class Mieszkanie
     {
-        public Mieszkanie(int idMieszkania, double czynsz, double wodaKanalizacja, double prad, double ogrzewanie, double smieci, double konserwacjeNaprawy, double wyposazenie, double ubezpieczenieNieruchomosci, double inne, Budget budget)
+        public Mieszkanie()
         {
-            IdMieszkania = idMieszkania;
+
+        }
+        public Mieszkanie(decimal czynsz, decimal wodaKanalizacja, decimal prad, decimal gaz ,decimal ogrzewanie, decimal smieci, decimal konserwacjeNaprawy, decimal wyposazenie, decimal ubezpieczenieNieruchomosci, decimal inne)
+        {
             Czynsz = czynsz;
             WodaKanalizacja = wodaKanalizacja;
             Prad = prad;
+            Gaz = gaz;
+            Ogrzewanie = ogrzewanie;
+            Smieci = smieci;
+            KonserwacjeNaprawy = konserwacjeNaprawy;
+            Wyposazenie = wyposazenie;
+            UbezpieczenieNieruchomosci = ubezpieczenieNieruchomosci;
+            Inne = inne;
+        }
+
+        public Mieszkanie( decimal czynsz, decimal wodaKanalizacja, decimal prad, decimal gaz ,decimal ogrzewanie, decimal smieci, decimal konserwacjeNaprawy, decimal wyposazenie, decimal ubezpieczenieNieruchomosci, decimal inne, Budget budget)
+        {
+            //IdMieszkania = idMieszkania;
+            Czynsz = czynsz;
+            WodaKanalizacja = wodaKanalizacja;
+            Prad = prad;
+            Gaz = gaz;
             Ogrzewanie = ogrzewanie;
             Smieci = smieci;
             KonserwacjeNaprawy = konserwacjeNaprawy;
@@ -29,33 +48,34 @@ namespace Project2
         [ForeignKey("Budget")]
 
         public int IdMieszkania { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Czynsz { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Czynsz { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double WodaKanalizacja { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal WodaKanalizacja { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Prad { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Prad { get; set; }
+        public decimal Gaz { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Ogrzewanie { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Ogrzewanie { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Smieci { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Smieci { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double KonserwacjeNaprawy { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal KonserwacjeNaprawy { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Wyposazenie { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Wyposazenie { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double UbezpieczenieNieruchomosci { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal UbezpieczenieNieruchomosci { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Inne { get; set; }
+        public decimal Inne { get; set; }
         public virtual Budget Budget { get; set; }
 
     }

@@ -10,9 +10,12 @@ namespace Project2
 {
     public class Dlugi
     {
-        public Dlugi(int idDlugi, double kredytHipoteczny, double kredytKonsumpcyjny, double pozyczkaOsobista, double inne, Budget budget)
+        public Dlugi()
         {
-            IdDlugi = idDlugi;
+
+        }
+        public Dlugi( decimal kredytHipoteczny, decimal kredytKonsumpcyjny, decimal pozyczkaOsobista, decimal inne, Budget budget)
+        {
             KredytHipoteczny = kredytHipoteczny;
             KredytKonsumpcyjny = kredytKonsumpcyjny;
             PozyczkaOsobista = pozyczkaOsobista;
@@ -20,17 +23,26 @@ namespace Project2
             Budget = budget;
         }
 
+        public Dlugi(decimal kredytHipoteczny, decimal kredytKonsumpcyjny, decimal pozyczkaOsobista, decimal inne)
+        {
+           
+            KredytHipoteczny = kredytHipoteczny;
+            KredytKonsumpcyjny = kredytKonsumpcyjny;
+            PozyczkaOsobista = pozyczkaOsobista;
+            Inne = inne;
+        }
+
         [Key]
         [ForeignKey("Budget")]
         public int IdDlugi { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
-        public double KredytHipoteczny { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
-        public double KredytKonsumpcyjny { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
-        public double PozyczkaOsobista { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
-        public double Inne { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
+        public decimal KredytHipoteczny { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
+        public decimal KredytKonsumpcyjny { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
+        public decimal PozyczkaOsobista { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
+        public decimal Inne { get; set; }
         public virtual Budget Budget { get; set; }
     }
 }

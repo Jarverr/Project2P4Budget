@@ -10,9 +10,22 @@ namespace Project2
 {
     public class Higiena
     {
-        public Higiena(int idHigiena, double kosmetyki, double srodkiCzystosci, double fryzjer, double kosmetyczka, double inne, Budget budget)
+        public Higiena()
         {
-            IdHigiena = idHigiena;
+
+        }
+        public Higiena(decimal kosmetyki, decimal srodkiCzystosci, decimal fryzjer, decimal kosmetyczka, decimal inne)
+        {
+            Kosmetyki = kosmetyki;
+            SrodkiCzystosci = srodkiCzystosci;
+            Fryzjer = fryzjer;
+            Kosmetyczka = kosmetyczka;
+            Inne = inne;
+        }
+
+        public Higiena( decimal kosmetyki, decimal srodkiCzystosci, decimal fryzjer, decimal kosmetyczka, decimal inne, Budget budget)
+        {
+            //IdHigiena = idHigiena;
             Kosmetyki = kosmetyki;
             SrodkiCzystosci = srodkiCzystosci;
             Fryzjer = fryzjer;
@@ -24,21 +37,21 @@ namespace Project2
         [Key]
         [ForeignKey("Budget")]
         public int IdHigiena { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Kosmetyki { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Kosmetyki { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double SrodkiCzystosci { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal SrodkiCzystosci { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Fryzjer { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Fryzjer { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Kosmetyczka { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal Kosmetyczka { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Inne { get; set; }
+        public decimal Inne { get; set; }
         public virtual Budget Budget { get; set; }
 
     }

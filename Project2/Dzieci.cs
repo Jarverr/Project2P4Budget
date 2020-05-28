@@ -10,9 +10,23 @@ namespace Project2
 {
     public class Dzieci
     {
-        public Dzieci(int idDzieci, double artykulySzkolne, double dodatkoweZajecia, double wplatyNaSzkole, double zabawkiGry, double opiekaNadDziecmi, double inne, Budget budget)
+        public Dzieci()
         {
-            IdDzieci = idDzieci;
+
+        }
+        public Dzieci(decimal artykulySzkolne, decimal dodatkoweZajecia, decimal wplatyNaSzkole, decimal zabawkiGry, decimal opiekaNadDziecmi, decimal inne)
+        {
+            ArtykulySzkolne = artykulySzkolne;
+            DodatkoweZajecia = dodatkoweZajecia;
+            WplatyNaSzkole = wplatyNaSzkole;
+            ZabawkiGry = zabawkiGry;
+            OpiekaNadDziecmi = opiekaNadDziecmi;
+            Inne = inne;
+        }
+
+        public Dzieci( decimal artykulySzkolne, decimal dodatkoweZajecia, decimal wplatyNaSzkole, decimal zabawkiGry, decimal opiekaNadDziecmi, decimal inne, Budget budget)
+        {
+            //IdDzieci = idDzieci;
             ArtykulySzkolne = artykulySzkolne;
             DodatkoweZajecia = dodatkoweZajecia;
             WplatyNaSzkole = wplatyNaSzkole;
@@ -25,24 +39,24 @@ namespace Project2
         [Key]
         [ForeignKey("Budget")]
         public int IdDzieci { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double ArtykulySzkolne { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal ArtykulySzkolne { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double DodatkoweZajecia { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal DodatkoweZajecia { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double WplatyNaSzkole { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal WplatyNaSzkole { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double ZabawkiGry { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal ZabawkiGry { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double OpiekaNadDziecmi { get; set; }
-        [Column(TypeName = "decimal(5,2)")]
+        public decimal OpiekaNadDziecmi { get; set; }
+        //[Column(TypeName = "decimal(5,2)")]
 
-        public double Inne { get; set; }
+        public decimal Inne { get; set; }
         public virtual Budget Budget { get; set; }
 
     }
