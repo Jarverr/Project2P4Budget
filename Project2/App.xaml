@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Project2"
              StartupUri="MainWindow.xaml"> <!-- tutaj podaje startowe okno aplikacji-->
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/StylesButtons.xaml"/>
+                <ResourceDictionary Source="Styles/WindowStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

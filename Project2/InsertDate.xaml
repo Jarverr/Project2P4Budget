@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project2"
         mc:Ignorable="d"
-        Title="InsertDate" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="InsertDate" Height="450" Width="800" MinHeight="450" MinWidth="800"
+         Style="{DynamicResource WindowStyle}">
     <Border Padding="10 5">
         <Grid>
             <Grid.RowDefinitions>
@@ -231,129 +232,129 @@
 
                     <!--kwoty-->
 
-                    <StackPanel Grid.Column="1">
+                    <StackPanel Grid.Column="1" x:Name="GroupOfTextBoxes">
 
                         <!-- przychody -->
                         <StackPanel x:Name="GroupProfit">
-                            <TextBox x:Name="TextBoxReward" Text="" Margin="0 30 10 0" Padding="2"/>
-                            <TextBox x:Name="TextBoxRewardPartner" Text="" Padding="2" Margin="0 4 10 0"/>
-                            <TextBox x:Name="TextBoxBonus" Text="" Padding="2" Margin="0 4 10 0"/>
-                            <TextBox x:Name="TextBoxBankBonus" Text="" Padding="2" Margin="0 4 10 0"/>
-                            <TextBox x:Name="TextBoxInterestBank" Text="" Padding="2" Margin="0 4 10 0"/>
-                            <TextBox x:Name="TextBoxAllegro" Text="" Padding="2" Margin="0 4 10 0"/>
-                            <TextBox x:Name="TextBoxDiffrentReward" Text="" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxReward" Text="{Binding Przychody.Wynagrodzenie }" Margin="0 30 10 0" Padding="2" />
+                            <TextBox x:Name="TextBoxRewardPartner" Text="{Binding Przychody.WynagrodzeniePartnera}" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxBonus" Text="{Binding Przychody.Premia}" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxBankBonus" Text="{Binding Przychody.PrzychodyZPremiiBankowych}" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxInterestBank" Text="{Binding Przychody.OdsetkiBankowe}" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxAllegro" Text="{Binding Przychody.SprzedazAllegro}" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxDiffrentReward" Text="{Binding Przychody.Inne}" Padding="2" Margin="0 4 10 0"/>
                         </StackPanel>
                         <!--jedzenie-->
                         <StackPanel x:Name="GroupFood">
-                            <TextBox x:Name="TextBoxFoodHouse" Text="" Padding="2" Margin="0 22 10 0" />
-                            <TextBox x:Name="TextBoxFoodCity" Text="" Padding="2" Margin="0 4 10 0"/>
-                            <TextBox x:Name="TextBoxFoodWork" Text="" Padding="2" Margin="0 4 10 0"/>
-                            <TextBox x:Name="TextBoxAlcohol" Text="" Padding="2" Margin="0 4 10 0"/>
-                            <TextBox x:Name="TextBoxDiffrentFood" Text="" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxFoodHouse" Text="{Binding Jedzenie.JedzenieDom}" Padding="2" Margin="0 22 10 0" />
+                            <TextBox x:Name="TextBoxFoodCity" Text="{Binding Jedzenie.JedzenieMiasto}" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxFoodWork" Text="{Binding Jedzenie.JedzeniePraca}" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxAlcohol" Text="{Binding Jedzenie.Alkohol}" Padding="2" Margin="0 4 10 0"/>
+                            <TextBox x:Name="TextBoxDiffrentFood" Text="{Binding Jedzenie.Inne}" Padding="2" Margin="0 4 10 0"/>
                         </StackPanel>
                         <!--Mieszkanie-->
                         <StackPanel x:Name="GroupFlat">
-                            <TextBox x:Name="TextBoxRent" Text="" Padding="2" Margin="0 24 10 0" />
-                            <TextBox x:Name="TextBoxWater" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxPower" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxGas" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxHeating" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxRubish" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxReparing" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxEquipment" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxInsurance" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentFlat" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxRent" Text="{Binding Mieszkanie.Czynsz}" Padding="2" Margin="0 24 10 0" />
+                            <TextBox x:Name="TextBoxWater" Text="{Binding Mieszkanie.WodaKanalizacja}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxPower" Text="{Binding Mieszkanie.Prad}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxGas" Text="{Binding Mieszkanie.Gaz}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxHeating" Text="{Binding Mieszkanie.Ogrzewanie}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxRubish" Text="{Binding Mieszkanie.Smieci}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxReparing" Text="{Binding Mieszkanie.KonserwacjeNaprawy}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxEquipment" Text="{Binding Mieszkanie.Wyposazenie}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxInsurance" Text="{Binding Mieszkanie.UbezpieczenieNieruchomosci}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentFlat" Text="{Binding Mieszkanie.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Transport -->
                         <StackPanel x:Name="GroupTransport">
-                            <TextBox x:Name="TextBoxFuelCar" Text="" Padding="2" Margin="0 26 10 0" />
-                            <TextBox x:Name="TextBoxReparingCar" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxAdditionalEquipmentCar" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxInsuranceCar" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxTicketPublicTransport" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxPKSPKP" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxTaxi" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentTransport" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxFuelCar" Text="{Binding Transport.PaliwoSamochod}" Padding="2" Margin="0 26 10 0" />
+                            <TextBox x:Name="TextBoxReparingCar" Text="{Binding Transport.PrzegladNaprawa}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxAdditionalEquipmentCar" Text="{Binding Transport.Wyposazenie}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxInsuranceCar" Text="{Binding Transport.DodatkoweUbezp}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxTicketPublicTransport" Text="{Binding Transport.BiletyKomunikacjiMiejskiej}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxPKSPKP" Text="{Binding Transport.BiletyPKPPKS}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxTaxi" Text="{Binding Transport.Taxi}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentTransport" Text="{Binding Transport.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Telekomunikacja-->
                         <StackPanel x:Name="GroupTelecomunication">
-                            <TextBox x:Name="TextBoxPhone1" Text="" Padding="2" Margin="0 24 10 0" />
-                            <TextBox x:Name="TextBoxPhone2" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxTV" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxInternet" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxTelecomunication" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxPhone1" Text="{Binding Telekomunikacja.Telefon1}" Padding="2" Margin="0 24 10 0" />
+                            <TextBox x:Name="TextBoxPhone2" Text="{Binding Telekomunikacja.Telefon2}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxTV" Text="{Binding Telekomunikacja.Tv}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxInternet" Text="{Binding Telekomunikacja.Internet}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxTelecomunication" Text="{Binding Telekomunikacja.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Opieka zdrowotna -->
                         <StackPanel x:Name="GroupHelath">
-                            <TextBox x:Name="TextBoxDoc" Text="" Padding="2" Margin="0 24 10 0" />
-                            <TextBox x:Name="TextBoxSurvey" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxMedicine" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentHealth" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDoc" Text="{Binding Zdrowie.Lekarz}" Padding="2" Margin="0 24 10 0" />
+                            <TextBox x:Name="TextBoxSurvey" Text="{Binding Zdrowie.Badania}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxMedicine" Text="{Binding Zdrowie.Lekarstwa}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentHealth" Text="{Binding Zdrowie.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Ubranie-->
                         <StackPanel x:Name="GroupClothes">
-                            <TextBox x:Name="TextBoxNormalClothes" Text="" Padding="2" Margin="0 24 10 0" />
-                            <TextBox x:Name="TextBoxSportClothes" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxShoes" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxExtensions" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentClothes" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxNormalClothes" Text="{Binding Ubrania.ZwykleUbrania}" Padding="2" Margin="0 24 10 0" />
+                            <TextBox x:Name="TextBoxSportClothes" Text="{Binding Ubrania.SportoweUbrania}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxShoes" Text="{Binding Ubrania.Buty}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxExtensions" Text="{Binding Ubrania.Dodatki}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentClothes" Text="{Binding Ubrania.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Higiena-->
                         <StackPanel x:Name="GroupHygiene">
-                            <TextBox x:Name="TextBoxCosmetics" Text="" Padding="2" Margin="0 24 10 0" />
-                            <TextBox x:Name="TextBoxCleaningSupplies" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxHairdresser" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxBeuatician" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentHygiene" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxCosmetics" Text="{Binding Higiena.Kosmetyki}" Padding="2" Margin="0 24 10 0" />
+                            <TextBox x:Name="TextBoxCleaningSupplies" Text="{Binding Higiena.SrodkiCzystosci}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxHairdresser" Text="{Binding Higiena.Fryzjer}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxBeuatician" Text="{Binding Higiena.Kosmetyczka}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentHygiene" Text="{Binding Higiena.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Dzieci-->
                         <StackPanel x:Name="GroupChildren">
-                            <TextBox x:Name="TextBoxSchoolArtical" Text="" Padding="2" Margin="0 26 10 0" />
-                            <TextBox x:Name="TextBoxExtraLessons" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxSchoolTaxes" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxJoys" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxChildcare" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentChildren" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxSchoolArtical" Text="{Binding Dzieci.ArtykulySzkolne}" Padding="2" Margin="0 26 10 0" />
+                            <TextBox x:Name="TextBoxExtraLessons" Text="{Binding Dzieci.DodatkoweZajecia}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxSchoolTaxes" Text="{Binding Dzieci.WplatyNaSzkole}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxJoys" Text="{Binding Dzieci.ZabawkiGry}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxChildcare" Text="{Binding Dzieci.OpiekaNadDziecmi}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentChildren" Text="{Binding Dzieci.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Rozrywka-->
                         <StackPanel x:Name="GroupEntertaiment">
-                            <TextBox x:Name="TextBoxGym" Text="" Padding="2" Margin="0 24 10 0" />
-                            <TextBox x:Name="TextBoxCinema" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxConcerts" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxNewspapers" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxBooks" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxHobbies" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxHotels" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentEntertainment" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxGym" Text="{Binding Rozrywka.SilowniaBasen}" Padding="2" Margin="0 24 10 0" />
+                            <TextBox x:Name="TextBoxCinema" Text="{Binding Rozrywka.Koncerty}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxConcerts" Text="{Binding Rozrywka.KinoTeatr}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxNewspapers" Text="{Binding Rozrywka.Czasopisma}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxBooks" Text="{Binding Rozrywka.Ksiazki}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxHobbies" Text="{Binding Rozrywka.Hobby}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxHotels" Text="{Binding Rozrywka.Hotel}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentEntertainment" Text="{Binding Rozrywka.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Inne-->
                         <StackPanel x:Name="GroupDiff">
-                            <TextBox x:Name="TextBoxCharity" Text="" Padding="2" Margin="0 22 10 0" />
-                            <TextBox x:Name="TextBoxPresent" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxRTV" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxSoftware" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxEducation" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxServices" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxTaxes" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentTaxes" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxCharity" Text="{Binding InneWydatki.Dobroczynnosc}" Padding="2" Margin="0 22 10 0" />
+                            <TextBox x:Name="TextBoxPresent" Text="{Binding InneWydatki.Prezenty}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxRTV" Text="{Binding InneWydatki.RTVAGD}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxSoftware" Text="{Binding InneWydatki.Oprogramowanie}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxEducation" Text="{Binding InneWydatki.EdukacjaSzkolenia}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxServices" Text="{Binding InneWydatki.Uslugi}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxTaxes" Text="{Binding InneWydatki.Podatki}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentTaxes" Text="{Binding InneWydatki.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Spłata długów-->
                         <StackPanel x:Name="GroupDebts">
-                            <TextBox x:Name="TextBoxMortage" Text="" Padding="2" Margin="0 26 10 0" />
-                            <TextBox x:Name="TextBoxConsumerLoan" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxIndividualLoan" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentLoans" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxMortage" Text="{Binding Dlugi.KredytHipoteczny}" Padding="2" Margin="0 26 10 0" />
+                            <TextBox x:Name="TextBoxConsumerLoan" Text="{Binding Dlugi.KredytKonsumpcyjny}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxIndividualLoan" Text="{Binding Dlugi.PozyczkaOsobista}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentLoans" Text="{Binding Dlugi.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
                         <!--Budowanie oszczędności -->
                         <StackPanel x:Name="GroupSavings">
-                            <TextBox x:Name="TextBoxEmergencyFund" Text="" Padding="2" Margin="0 24 10 0" />
-                            <TextBox x:Name="TextBoxIrregularExpenditure" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxFinancialCushion" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxRetirmentAccount" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxOverpaymentDebts" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxSummerHoliday" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxChristmas" Text="" Padding="2" Margin="0 4 10 0" />
-                            <TextBox x:Name="TextBoxDiffrentSavings" Text="" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxEmergencyFund" Text="{Binding BudowanieOszczednosci.FunduszAwaryjny}" Padding="2" Margin="0 24 10 0" />
+                            <TextBox x:Name="TextBoxIrregularExpenditure" Text="{Binding BudowanieOszczednosci.FunduszWydatkówNieregularnych}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxFinancialCushion" Text="{Binding BudowanieOszczednosci.PoduszkaFinansowa}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxRetirmentAccount" Text="{Binding BudowanieOszczednosci.KontoEmerytalne}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxOverpaymentDebts" Text="{Binding BudowanieOszczednosci.NadpłataDlugow}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxSummerHoliday" Text="{Binding BudowanieOszczednosci.FunduszWakacyjny}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxChristmas" Text="{Binding BudowanieOszczednosci.FunduszPrezentySwiateczne}" Padding="2" Margin="0 4 10 0" />
+                            <TextBox x:Name="TextBoxDiffrentSavings" Text="{Binding BudowanieOszczednosci.Inne}" Padding="2" Margin="0 4 10 0" />
                         </StackPanel>
 
 

@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Project2.Styles">
+    <Style TargetType="Button">
+        <Setter Property="Control.Background" Value="#f2f2f2"/>
+        <Setter Property="Control.Foreground" Value="DarkGoldenrod"/>
+        <Setter Property="Control.FontSize" Value="15px"/>
+        <Setter Property="Control.Padding" Value="10px 5px"/>
+        <Setter Property="Control.BorderThickness" Value="2px"/>
+        <Setter Property="Control.BorderBrush" Value="Black"/>
+    </Style>
+    
+</ResourceDictionary>

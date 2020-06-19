@@ -8,7 +8,7 @@
         xmlns:views="clr-namespace:Project2.Views"
         mc:Ignorable="d"
         Title="Kontrola danych" Height="450" Width="800" MinHeight="450" MinWidth="800"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"  Style="{DynamicResource WindowStyle}">
     <!--Formatowanie widoku do odkomentowania! potem -->
     <!--<Window.Resources>
         <DataTemplate x:Name="CheckingDate" DataType="{x:Type viewsModel:CheckingDateModel}">
@@ -78,9 +78,9 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Button Content="Przeszukaj dane" Padding="3" MinWidth="75" MinHeight="30" Grid.Column="0" Margin="20 10 20 10" VerticalAlignment="Center" Click="CheckView_Clicked"/>
-                    <Button Content="Wstaw dane" Padding="3" MinWidth="75" MinHeight="30" Grid.Column="1" Margin="20 10 20 10" VerticalAlignment="Center" Click="ModyfyView_Clicked"></Button>
-                    <Button Content="Wykresy" Padding="3" MinWidth="75" MinHeight="30" Grid.Column="2" Margin=" 20 10 20 10" VerticalAlignment="Center" Click="ChartView_Clicked"></Button>
+                    <Button Content="Przeszukaj dane" Padding="3" MinWidth="75" MinHeight="30" Grid.Column="0" Margin="10 10 20 10" VerticalAlignment="Center" Click="CheckView_Clicked"/>
+                    <Button Content="Wstaw dane" Padding="3" MinWidth="75" MinHeight="30" Grid.Column="1" Margin="10 10 10 10" VerticalAlignment="Center" Click="ModyfyView_Clicked"></Button>
+                    <Button Content="Wykresy" Padding="3" MinWidth="75" MinHeight="30" Grid.Column="2" Margin=" 10 10 20 10" VerticalAlignment="Center" Click="ChartView_Clicked"></Button>
                 </Grid>
             </StackPanel>
 
@@ -283,7 +283,7 @@
                                             <TextBlock Text="{Binding Przychody.Wynagrodzenie}" Margin="0 24 0 0" />
                                             <TextBlock Text="{Binding Przychody.WynagrodzeniePartnera}" />
                                             <TextBlock Text="{Binding Przychody.Premia}" />
-                                            <TextBlock Text="{Binding Przychody.WynagrodzeniePartnera}" />
+                                            <TextBlock Text="{Binding Przychody.PrzychodyZPremiiBankowych}" />
                                             <TextBlock Text="{Binding Przychody.OdsetkiBankowe}" />
                                             <TextBlock Text="{Binding Przychody.SprzedazAllegro}" />
                                             <TextBlock Text="{Binding Przychody.Inne}" />

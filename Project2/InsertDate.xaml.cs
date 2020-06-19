@@ -20,6 +20,7 @@ namespace Project2
     /// </summary>
     public partial class InsertDate : Window
     {
+        private Budget budget;
         public InsertDate()
         {
             InitializeComponent();
@@ -35,6 +36,22 @@ namespace Project2
                     Month.SelectedValue = i;
                 }
             }
+            budget = new Budget();
+            budget.BudowanieOszczednosci = new BudowanieOszczednosci();
+            budget.Dlugi = new Dlugi();
+            budget.Dzieci = new Dzieci();
+            budget.Higiena = new Higiena();
+            budget.InneWydatki = new InneWydatki();
+            budget.Jedzenie = new Jedzenie();
+            budget.Mieszkanie = new Mieszkanie();
+            budget.Przychody = new Przychody();
+            budget.Rozrywka = new Rozrywka();
+            budget.Telekomunikacja = new Telekomunikacja();
+            budget.Transport = new Transport();
+            budget.Ubrania = new Ubrania();
+            budget.Zdrowie = new Zdrowie();
+
+            DataContext = budget;
         }
         private void CheckView_Clicked(object sender, RoutedEventArgs e)
         {
@@ -233,7 +250,10 @@ namespace Project2
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        {   
+            
+            ///Paroswanie texboxow
+            /*
             Decimal[] number = new Decimal[10];
             //Przychody
             Decimal.TryParse(TextBoxReward.Text, out number[0]);
@@ -344,6 +364,8 @@ namespace Project2
             Decimal.TryParse(TextBoxChristmas.Text, out number[6]);
             Decimal.TryParse(TextBoxDiffrentSavings.Text, out number[7]);
             var savings = new BudowanieOszczednosci(number[0], number[1], number[2], number[3], number[4], number[5], number[6], number[7]);
+            */
+            
             using (var DateFromDataBase = new BudgetContext())
             {
                 int idToInsert=Month.SelectedIndex;
@@ -359,13 +381,21 @@ namespace Project2
                 {
                     if (item.IdPrzychody==idToInsert)
                     {
-                        item.Wynagrodzenie += profit.Wynagrodzenie;
-                        item.WynagrodzeniePartnera += profit.WynagrodzeniePartnera;
-                        item.SprzedazAllegro += profit.SprzedazAllegro;
-                        item.PrzychodyZPremiiBankowych += profit.PrzychodyZPremiiBankowych;
-                        item.Premia += profit.Premia;
-                        item.OdsetkiBankowe += profit.OdsetkiBankowe;
-                        item.Inne += profit.Inne;
+                        item.Wynagrodzenie += budget.Przychody.Wynagrodzenie;
+                        item.WynagrodzeniePartnera += budget.Przychody.WynagrodzeniePartnera;
+                        item.SprzedazAllegro += budget.Przychody.SprzedazAllegro;
+                        item.PrzychodyZPremiiBankowych += budget.Przychody.PrzychodyZPremiiBankowych;
+                        item.Premia += budget.Przychody.Premia;
+                        item.OdsetkiBankowe += budget.Przychody.OdsetkiBankowe;
+                        item.Inne += budget.Przychody.Inne;
+
+                        //item.Wynagrodzenie += profit.Wynagrodzenie;
+                        //item.WynagrodzeniePartnera += profit.WynagrodzeniePartnera;
+                        //item.SprzedazAllegro += profit.SprzedazAllegro;
+                        //item.PrzychodyZPremiiBankowych += profit.PrzychodyZPremiiBankowych;
+                        //item.Premia += profit.Premia;
+                        //item.OdsetkiBankowe += profit.OdsetkiBankowe;
+                        //item.Inne += profit.Inne;
                         break;
                     }
                 }
@@ -373,14 +403,14 @@ namespace Project2
                 {
                     if (item.IdBudowaniaOszczednosci==idToInsert)
                     {
-                        item.FunduszAwaryjny += savings.FunduszAwaryjny;
-                        item.FunduszPrezentySwiateczne += savings.FunduszPrezentySwiateczne;
-                        item.FunduszWakacyjny += savings.FunduszWakacyjny;
-                        item.FunduszWydatkówNieregularnych += savings.FunduszWydatkówNieregularnych;
-                        item.Inne += savings.Inne;
-                        item.KontoEmerytalne += savings.KontoEmerytalne;
-                        item.NadpłataDlugow += savings.NadpłataDlugow;
-                        item.PoduszkaFinansowa += savings.PoduszkaFinansowa;
+                        item.FunduszAwaryjny += budget.BudowanieOszczednosci.FunduszAwaryjny;
+                        item.FunduszPrezentySwiateczne += budget.BudowanieOszczednosci.FunduszPrezentySwiateczne;
+                        item.FunduszWakacyjny += budget.BudowanieOszczednosci.FunduszWakacyjny;
+                        item.FunduszWydatkówNieregularnych += budget.BudowanieOszczednosci.FunduszWydatkówNieregularnych;
+                        item.Inne += budget.BudowanieOszczednosci.Inne;
+                        item.KontoEmerytalne += budget.BudowanieOszczednosci.KontoEmerytalne;
+                        item.NadpłataDlugow += budget.BudowanieOszczednosci.NadpłataDlugow;
+                        item.PoduszkaFinansowa += budget.BudowanieOszczednosci.PoduszkaFinansowa;
                         break;
                     }
                 }
@@ -388,10 +418,10 @@ namespace Project2
                 {
                     if (item.IdDlugi==idToInsert)
                     {
-                        item.Inne += loans.Inne;
-                        item.KredytHipoteczny += loans.KredytHipoteczny;
-                        item.KredytKonsumpcyjny += loans.KredytKonsumpcyjny;
-                        item.PozyczkaOsobista += loans.PozyczkaOsobista;
+                        item.Inne += budget.Dlugi.Inne;
+                        item.KredytHipoteczny += budget.Dlugi.KredytHipoteczny;
+                        item.KredytKonsumpcyjny += budget.Dlugi.KredytKonsumpcyjny;
+                        item.PozyczkaOsobista += budget.Dlugi.PozyczkaOsobista;
                         break;
                     }
 
@@ -400,12 +430,12 @@ namespace Project2
                 {
                     if (item.IdDzieci==idToInsert)
                     {
-                        item.ArtykulySzkolne += children.ArtykulySzkolne;
-                        item.DodatkoweZajecia += children.DodatkoweZajecia;
-                        item.Inne += children.Inne;
-                        item.OpiekaNadDziecmi += children.OpiekaNadDziecmi;
-                        item.WplatyNaSzkole += children.WplatyNaSzkole;
-                        item.ZabawkiGry += children.ZabawkiGry;
+                        item.ArtykulySzkolne += budget.Dzieci.ArtykulySzkolne;
+                        item.DodatkoweZajecia += budget.Dzieci.DodatkoweZajecia;
+                        item.Inne += budget.Dzieci.Inne;
+                        item.OpiekaNadDziecmi += budget.Dzieci.OpiekaNadDziecmi;
+                        item.WplatyNaSzkole += budget.Dzieci.WplatyNaSzkole;
+                        item.ZabawkiGry += budget.Dzieci.ZabawkiGry;
                         break;
                     }
                 }
@@ -414,11 +444,11 @@ namespace Project2
                 {
                     if (item.IdHigiena==idToInsert)
                     {
-                        item.Fryzjer += hygiene.Fryzjer;
-                        item.Inne += hygiene.Inne;
-                        item.Kosmetyczka += hygiene.Kosmetyczka;
-                        item.Kosmetyki += hygiene.Kosmetyki;
-                        item.SrodkiCzystosci += hygiene.SrodkiCzystosci;
+                        item.Fryzjer += budget.Higiena.Fryzjer;
+                        item.Inne += budget.Higiena.Inne;
+                        item.Kosmetyczka += budget.Higiena.Kosmetyczka;
+                        item.Kosmetyki += budget.Higiena.Kosmetyki;
+                        item.SrodkiCzystosci += budget.Higiena.SrodkiCzystosci;
                         break;
                     }
                 }
@@ -426,14 +456,14 @@ namespace Project2
                 {
                     if (item.IdInneWydatki==idToInsert)
                     {
-                        item.Dobroczynnosc += Diffrent.Dobroczynnosc;
-                        item.EdukacjaSzkolenia += Diffrent.EdukacjaSzkolenia;
-                        item.Inne += Diffrent.Inne;
-                        item.Oprogramowanie += Diffrent.Oprogramowanie;
-                        item.Podatki += Diffrent.Podatki;
-                        item.Prezenty += Diffrent.Prezenty;
-                        item.RTVAGD += Diffrent.RTVAGD;
-                        item.Uslugi += Diffrent.Uslugi;
+                        item.Dobroczynnosc += budget.InneWydatki.Dobroczynnosc;
+                        item.EdukacjaSzkolenia += budget.InneWydatki.EdukacjaSzkolenia;
+                        item.Inne += budget.InneWydatki.Inne;
+                        item.Oprogramowanie += budget.InneWydatki.Oprogramowanie;
+                        item.Podatki += budget.InneWydatki.Podatki;
+                        item.Prezenty += budget.InneWydatki.Prezenty;
+                        item.RTVAGD += budget.InneWydatki.RTVAGD;
+                        item.Uslugi += budget.InneWydatki.Uslugi;
                         break;
                     }
                 }
@@ -441,11 +471,11 @@ namespace Project2
                 {
                     if (item.IdJedzenie==idToInsert)
                     {
-                        item.Alkohol += food.Alkohol;
-                        item.Inne += food.Inne;
-                        item.JedzenieDom += food.JedzenieDom;
-                        item.JedzenieMiasto += food.JedzenieMiasto;
-                        item.JedzeniePraca += food.JedzeniePraca;
+                        item.Alkohol += budget.Jedzenie.Alkohol;
+                        item.Inne += budget.Jedzenie.Inne;
+                        item.JedzenieDom += budget.Jedzenie.JedzenieDom;
+                        item.JedzenieMiasto += budget.Jedzenie.JedzenieMiasto;
+                        item.JedzeniePraca += budget.Jedzenie.JedzeniePraca;
                         break;
                     }
 
@@ -454,16 +484,16 @@ namespace Project2
                 {
                     if (item.IdMieszkania==idToInsert)
                     {
-                        item.Czynsz += flat.Czynsz;
-                        item.Gaz += flat.Gaz;
-                        item.Inne += flat.Inne;
-                        item.KonserwacjeNaprawy += flat.KonserwacjeNaprawy;
-                        item.Ogrzewanie += flat.Ogrzewanie;
-                        item.Prad += flat.Prad;
-                        item.Smieci += flat.Smieci;
-                        item.UbezpieczenieNieruchomosci += flat.UbezpieczenieNieruchomosci;
-                        item.WodaKanalizacja += flat.WodaKanalizacja;
-                        item.Wyposazenie += flat.Wyposazenie;
+                        item.Czynsz += budget.Mieszkanie.Czynsz;
+                        item.Gaz += budget.Mieszkanie.Gaz;
+                        item.Inne += budget.Mieszkanie.Inne;
+                        item.KonserwacjeNaprawy += budget.Mieszkanie.KonserwacjeNaprawy;
+                        item.Ogrzewanie += budget.Mieszkanie.Ogrzewanie;
+                        item.Prad += budget.Mieszkanie.Prad;
+                        item.Smieci += budget.Mieszkanie.Smieci;
+                        item.UbezpieczenieNieruchomosci += budget.Mieszkanie.UbezpieczenieNieruchomosci;
+                        item.WodaKanalizacja += budget.Mieszkanie.WodaKanalizacja;
+                        item.Wyposazenie += budget.Mieszkanie.Wyposazenie;
                         break;
                     }
                 }
@@ -471,14 +501,14 @@ namespace Project2
                 {
                     if (item.IdRozrywka == idToInsert)
                     {
-                        item.Czasopisma += entertaiment.Czasopisma;
-                        item.Hobby += entertaiment.Hobby;
-                        item.Hotel += entertaiment.Hotel;
-                        item.Inne += entertaiment.Inne;
-                        item.KinoTeatr += entertaiment.KinoTeatr;
-                        item.Koncerty += entertaiment.Koncerty;
-                        item.Ksiazki += entertaiment.Ksiazki;
-                        item.SilowniaBasen += entertaiment.SilowniaBasen;
+                        item.Czasopisma += budget.Rozrywka.Czasopisma;
+                        item.Hobby += budget.Rozrywka.Hobby;
+                        item.Hotel += budget.Rozrywka.Hotel;
+                        item.Inne += budget.Rozrywka.Inne;
+                        item.KinoTeatr += budget.Rozrywka.KinoTeatr;
+                        item.Koncerty += budget.Rozrywka.Koncerty;
+                        item.Ksiazki += budget.Rozrywka.Ksiazki;
+                        item.SilowniaBasen += budget.Rozrywka.SilowniaBasen;
                         break;
                     }
                 }
@@ -486,11 +516,11 @@ namespace Project2
                 {
                     if (item.IdTelekomunikacja==idToInsert)
                     {
-                        item.Inne += telecomunication.Inne;
-                        item.Internet += telecomunication.Internet;
-                        item.Telefon1 += telecomunication.Telefon1;
-                        item.Telefon2 += telecomunication.Telefon2;
-                        item.Tv += telecomunication.Tv;
+                        item.Inne += budget.Telekomunikacja.Inne;
+                        item.Internet += budget.Telekomunikacja.Internet;
+                        item.Telefon1 += budget.Telekomunikacja.Telefon1;
+                        item.Telefon2 += budget.Telekomunikacja.Telefon2;
+                        item.Tv += budget.Telekomunikacja.Tv;
                         break;
                     }
                 }
@@ -498,14 +528,14 @@ namespace Project2
                 {
                     if (item.IdTransport==idToInsert)
                     {
-                        item.BiletyKomunikacjiMiejskiej += transport.BiletyKomunikacjiMiejskiej;
-                        item.BiletyPKPPKS += transport.BiletyPKPPKS;
-                        item.DodatkoweUbezp += transport.DodatkoweUbezp;
-                        item.Inne += transport.Inne;
-                        item.PaliwoSamochod += transport.PaliwoSamochod;
-                        item.PrzegladNaprawa += transport.PrzegladNaprawa;
-                        item.Taxi += transport.Taxi;
-                        item.Wyposazenie += transport.Wyposazenie;
+                        item.BiletyKomunikacjiMiejskiej += budget.Transport.BiletyKomunikacjiMiejskiej;
+                        item.BiletyPKPPKS += budget.Transport.BiletyPKPPKS;
+                        item.DodatkoweUbezp += budget.Transport.DodatkoweUbezp;
+                        item.Inne += budget.Transport.Inne;
+                        item.PaliwoSamochod += budget.Transport.PaliwoSamochod;
+                        item.PrzegladNaprawa += budget.Transport.PrzegladNaprawa;
+                        item.Taxi += budget.Transport.Taxi;
+                        item.Wyposazenie += budget.Transport.Wyposazenie;
                         break;
                     }
                 }
@@ -513,11 +543,11 @@ namespace Project2
                 {
                     if (idToInsert==item.IdUbrania)
                     {
-                        item.Buty += cloathes.Buty;
-                        item.Dodatki += cloathes.Dodatki;
-                        item.Inne += cloathes.Inne;
-                        item.SportoweUbrania += cloathes.SportoweUbrania;
-                        item.ZwykleUbrania += cloathes.ZwykleUbrania;
+                        item.Buty += budget.Ubrania.Buty;
+                        item.Dodatki += budget.Ubrania.Dodatki;
+                        item.Inne += budget.Ubrania.Inne;
+                        item.SportoweUbrania += budget.Ubrania.SportoweUbrania;
+                        item.ZwykleUbrania += budget.Ubrania.ZwykleUbrania;
                         break;
                     }
                 }
@@ -525,99 +555,117 @@ namespace Project2
                 {
                     if (idToInsert==item.IdZdrowie)
                     {
-                        item.Badania += helath.Badania;
-                        item.Inne += helath.Inne;
-                        item.Lekarstwa += helath.Lekarstwa;
-                        item.Lekarz += helath.Lekarz;
+                        item.Badania += budget.Zdrowie.Badania;
+                        item.Inne += budget.Zdrowie.Inne;
+                        item.Lekarstwa += budget.Zdrowie.Lekarstwa;
+                        item.Lekarz += budget.Zdrowie.Lekarz;
                         break;
                     }
                 }
                 DateFromDataBase.SaveChanges();
 
             }
-            TextBoxAdditionalEquipmentCar.Text = "";
-            TextBoxAlcohol.Text = "";
-            TextBoxAllegro.Text = "";
-            TextBoxBankBonus.Text = "";
-            TextBoxBeuatician.Text = "";
-            TextBoxBonus.Text = "";
-            TextBoxBooks.Text = "";
-            TextBoxCharity.Text = "";
-            TextBoxChildcare.Text = "";
-            TextBoxChristmas.Text = "";
-            TextBoxCinema.Text = "";
-            TextBoxCleaningSupplies.Text = "";
-            TextBoxConcerts.Text = "";
-            TextBoxConsumerLoan.Text = "";
-            TextBoxCosmetics.Text = "";
-            TextBoxDiffrentChildren.Text = "";
-            TextBoxDiffrentClothes.Text = "";
-            TextBoxDiffrentEntertainment.Text = "";
-            TextBoxDiffrentFlat.Text = "";
-            TextBoxDiffrentFood.Text = "";
-            TextBoxDiffrentHealth.Text = "";
-            TextBoxDiffrentHygiene.Text = "";
-            TextBoxDiffrentLoans.Text = "";
-            TextBoxDiffrentReward.Text = "";
-            TextBoxDiffrentSavings.Text = "";
-            TextBoxDiffrentTaxes.Text = "";
-            TextBoxDiffrentTransport.Text = "";
-            TextBoxDoc.Text = "";
-            TextBoxEducation.Text = "";
-            TextBoxEmergencyFund.Text = "";
-            TextBoxEquipment.Text = "";
-            TextBoxExtensions.Text = "";
-            TextBoxExtraLessons.Text = "";
-            TextBoxFinancialCushion.Text = "";
-            TextBoxFoodCity.Text = "";
-            TextBoxFoodHouse.Text = "";
-            TextBoxFoodWork.Text = "";
-            TextBoxFuelCar.Text = "";
-            TextBoxGas.Text = "";
-            TextBoxGym.Text = "";
-            TextBoxHairdresser.Text = "";
-            TextBoxHeating.Text = "";
-            TextBoxHobbies.Text = "";
-            TextBoxHotels.Text = "";
-            TextBoxIndividualLoan.Text = "";
-            TextBoxInsurance.Text = "";
-            TextBoxInsuranceCar.Text = "";
-            TextBoxInterestBank.Text = "";
-            TextBoxInternet.Text = "";
-            TextBoxIrregularExpenditure.Text = "";
-            TextBoxJoys.Text = "";
-            TextBoxMedicine.Text = "";
-            TextBoxMortage.Text = "";
-            TextBoxNewspapers.Text = "";
-            TextBoxNormalClothes.Text = "";
-            TextBoxOverpaymentDebts.Text = "";
-            TextBoxPhone1.Text = "";
-            TextBoxPhone2.Text = "";
-            TextBoxPKSPKP.Text = "";
-            TextBoxPower.Text = "";
-            TextBoxPresent.Text = "";
-            TextBoxRent.Text = "";
-            TextBoxReparing.Text = "";
-            TextBoxReparingCar.Text = "";
-            TextBoxRetirmentAccount.Text = "";
-            TextBoxReward.Text = "";
-            TextBoxRewardPartner.Text = "";
-            TextBoxRTV.Text = "";
-            TextBoxRubish.Text = "";
-            TextBoxSchoolArtical.Text = "";
-            TextBoxSchoolTaxes.Text = "";
-            TextBoxServices.Text = "";
-            TextBoxShoes.Text = "";
-            TextBoxSoftware.Text = "";
-            TextBoxSportClothes.Text = "";
-            TextBoxSummerHoliday.Text = "";
-            TextBoxSurvey.Text = "";
-            TextBoxTaxes.Text = "";
-            TextBoxTaxi.Text = "";
-            TextBoxTelecomunication.Text = "";
-            TextBoxTicketPublicTransport.Text = "";
-            TextBoxTV.Text = "";
-            TextBoxWater.Text = "";
+            budget.Przychody.Inne = 0;
+            budget.Przychody.OdsetkiBankowe = 0;
+            budget.Przychody.Premia = 0;
+            budget.Przychody.PrzychodyZPremiiBankowych = 0;
+            budget.Przychody.SprzedazAllegro = 0;
+            budget.Przychody.Wynagrodzenie= 0;
+            budget.Przychody.WynagrodzeniePartnera= 0;
+            budget.BudowanieOszczednosci.FunduszAwaryjny = 0;
+            budget.BudowanieOszczednosci.FunduszPrezentySwiateczne = 0;
+            budget.BudowanieOszczednosci.FunduszWakacyjny = 0;
+            budget.BudowanieOszczednosci.FunduszWydatkówNieregularnych = 0;
+            budget.BudowanieOszczednosci.Inne= 0;
+            budget.BudowanieOszczednosci.KontoEmerytalne= 0;
+            budget.BudowanieOszczednosci.NadpłataDlugow = 0;
+            budget.BudowanieOszczednosci.PoduszkaFinansowa= 0;
+            budget.Dlugi.Inne= 0;
+            budget.Dlugi.KredytHipoteczny = 0;
+            budget.Dlugi.KredytKonsumpcyjny= 0;
+            budget.Dlugi.PozyczkaOsobista= 0;
+            budget.Dzieci.ArtykulySzkolne= 0;
+            budget.Dzieci.DodatkoweZajecia = 0;
+            budget.Dzieci.Inne = 0;
+            budget.Dzieci.OpiekaNadDziecmi = 0;
+            budget.Dzieci.WplatyNaSzkole = 0;
+            budget.Dzieci.ZabawkiGry = 0;
+            budget.Higiena.Fryzjer = 0;
+            budget.Higiena.Inne = 0;
+            budget.Higiena.Kosmetyczka= 0;
+            budget.Higiena.Kosmetyki = 0;
+            budget.Higiena.SrodkiCzystosci= 0;
+            budget.InneWydatki.Dobroczynnosc= 0;
+            budget.InneWydatki.EdukacjaSzkolenia = 0;
+            budget.InneWydatki.Inne = 0;
+            budget.InneWydatki.Oprogramowanie= 0;
+            budget.InneWydatki.Podatki = 0;
+            budget.InneWydatki.Prezenty = 0;
+            budget.InneWydatki.RTVAGD = 0;
+            budget.InneWydatki.Uslugi= 0;
+            budget.Jedzenie.Alkohol= 0;
+            budget.Jedzenie.Inne= 0;
+            budget.Jedzenie.JedzenieDom = 0;
+            budget.Jedzenie.JedzenieMiasto = 0;
+            budget.Jedzenie.JedzeniePraca = 0;
+            budget.Mieszkanie.Czynsz = 0;
+            budget.Mieszkanie.Gaz= 0;
+            budget.Mieszkanie.Inne = 0;
+            budget.Mieszkanie.KonserwacjeNaprawy = 0;
+            budget.Mieszkanie.Ogrzewanie = 0;
+            budget.Mieszkanie.Prad = 0;
+            budget.Mieszkanie.Smieci = 0;
+            budget.Mieszkanie.UbezpieczenieNieruchomosci= 0;
+            budget.Mieszkanie.WodaKanalizacja = 0;
+            budget.Mieszkanie.Wyposazenie = 0;
+            budget.Przychody.Inne = 0;
+            budget.Przychody.OdsetkiBankowe = 0;
+            budget.Przychody.Premia = 0;
+            budget.Przychody.PrzychodyZPremiiBankowych = 0;
+            budget.Przychody.SprzedazAllegro = 0;
+            budget.Przychody.Wynagrodzenie = 0;
+            budget.Przychody.WynagrodzeniePartnera = 0;
+            budget.Rozrywka.Czasopisma = 0;
+            budget.Rozrywka.Hobby = 0;
+            budget.Rozrywka.Hotel = 0;
+            budget.Rozrywka.Inne= 0;
+            budget.Rozrywka.KinoTeatr= 0;
+            budget.Rozrywka.Koncerty = 0;
+            budget.Rozrywka.Ksiazki= 0;
+            budget.Rozrywka.SilowniaBasen  = 0;
+            budget.Telekomunikacja.Inne = 0;
+            budget.Telekomunikacja.Internet= 0;
+            budget.Telekomunikacja.Telefon1 = 0;
+            budget.Telekomunikacja.Telefon2 = 0;
+            budget.Telekomunikacja.Tv = 0;
+            budget.Transport.BiletyKomunikacjiMiejskiej = 0;
+            budget.Transport.BiletyPKPPKS= 0;
+            budget.Transport.DodatkoweUbezp= 0;
+            budget.Transport.Inne = 0;
+            budget.Transport.PaliwoSamochod = 0;
+            budget.Transport.PrzegladNaprawa = 0;
+            budget.Transport.Taxi= 0;
+            budget.Transport.Wyposazenie= 0;
+            budget.Ubrania.Buty= 0;
+            budget.Ubrania.Dodatki = 0;
+            budget.Ubrania.Inne = 0;
+            budget.Ubrania.SportoweUbrania = 0;
+            budget.Ubrania.ZwykleUbrania = 0;
+            budget.Zdrowie.Badania = 0;
+            budget.Zdrowie.Inne = 0;
+            budget.Zdrowie.Lekarstwa = 0;
+            budget.Zdrowie.Lekarz = 0;
+
+            foreach (StackPanel item in GroupOfTextBoxes.Children)
+            {
+                foreach (Control item2 in item.Children)
+                {
+                    if (item2.GetType()==typeof(TextBox))
+                    {
+                        ((TextBox)item2).Text = string.Empty;
+                    }
+                }
+            }
 
             TBInfoAboutAddingToDB.Visibility = Visibility.Visible;
             timer.Tick -= dispacherTimer_Ticked;

@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project2"
         mc:Ignorable="d"
-        Title="Hello there :)" Height="450" Width="800">
-    <Border Padding="10 5 10 5">
+        Title="Hello there :)" Height="450" Width="800"
+        Style="{DynamicResource WindowStyle}">
         <StackPanel>
-            <Label Content="Dzień dobry! :) Dobrze Cię widzieć, fajnie że jesteś - uśmiechnij się! Proszę."  FontSize="20" FontWeight="Bold" FontFamily="Book Antiqua"/>
-            <Label x:Name="TitleOfProgram" Content="Budżet domowy " Margin="0 0 0 25" FontWeight="Heavy" FontSize="15"></Label>
+            <Label Content="Dzień dobry! :) Dobrze Cię widzieć, fajnie że jesteś - uśmiechnij się! Proszę."  FontSize="20" FontWeight="Bold" FontFamily="Book Antiqua" Margin="10 0"/>
+            <Label x:Name="TitleOfProgram" Content="Budżet domowy " Margin="0 0 0 25" FontWeight="Heavy" FontSize="15" Background="LightGray"></Label>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -28,6 +28,5 @@
             <ProgressBar x:Name="ProgressBarCreation" Height="20" Margin="100 0"></ProgressBar>
         </StackPanel>
 
-    </Border>
 
 </Window>
