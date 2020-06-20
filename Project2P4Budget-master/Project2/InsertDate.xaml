@@ -57,14 +57,14 @@
                 <TextBlock Text="Nawigacja:" FontWeight="Heavy" FontSize="15"/>
                 <Grid VerticalAlignment="Center">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="4*"></ColumnDefinition>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Button Content="Przeszukaj dane" Padding="3" MinWidth="75" MinHeight="30" Grid.Column="0" Margin="20 10 20 10" VerticalAlignment="Center" Click="CheckView_Clicked"/>
-                    <Button Content="Wstaw dane" Padding="3" MinWidth="75" MinHeight="30" Grid.Column="1" Margin="20 10 20 10" VerticalAlignment="Center" Click="ModyfyView_Clicked"></Button>
-                    <Button Content="Wykresy" Padding="3" MinWidth="75" MinHeight="30" Grid.Column="2" Margin=" 20 10 20 10" VerticalAlignment="Center" Click="ChartView_Clicked"></Button>
+                    <Button Content="Przeszukaj dane"  MinWidth="75" MinHeight="30" Grid.Column="0" Margin="10 10 20 10" VerticalAlignment="Center" Click="CheckView_Clicked"/>
+                    <Button Content="Wstaw dane"  MinWidth="75" MinHeight="30" Grid.Column="1" Margin="0 10 20 10" VerticalAlignment="Center" Click="ModyfyView_Clicked"></Button>
+                    <Button Content="Wykresy"  MinWidth="75" MinHeight="30" Grid.Column="2" Margin=" 0 10 20 10" VerticalAlignment="Center" Click="ChartView_Clicked"></Button>
                 </Grid>
             </StackPanel>
 
