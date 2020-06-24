@@ -15,10 +15,53 @@ namespace Project2
         {
             InitializeComponent();
             TitleOfProgram.Content += DateTime.Now.Year.ToString();
+
+            if (DateTime.Now.Hour>19)
+            {
+                WelcomeLabel.Content += "Dobry wieczór!  :) Dobrze Cię widzieć, fajnie że jesteś - uśmiechnij się! Proszę.";
+            }
+            else
+               WelcomeLabel.Content += "Dzięń dobry!  :) Dobrze Cię widzieć, fajnie że jesteś - uśmiechnij się! Proszę.";
+
         }
+        /// <summary>
+        /// Tworzenie BD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var backgroundWorker = new BackgroundWorker();
+            backgroundWorker.DoWork += creatingDBBackgroundWorker_doWork;
+            backgroundWorker.ProgressChanged += backgroundWorkerDBCreating_Progress;
+            backgroundWorker.RunWorkerCompleted += backgroundWorkerCreated_End;
+            backgroundWorker.WorkerReportsProgress = true;
+            GoToDataButton.IsEnabled = false;
+            GoToModyfDateButton.IsEnabled = false;
+            CrateButton.IsEnabled = false;
+            backgroundWorker.RunWorkerAsync();
+          
+        }
+
+        private void backgroundWorkerCreated_End(object sender, RunWorkerCompletedEventArgs e)
+        {
+            ProgressBarCreation.Value = 0;
+            GoToDataButton.IsEnabled = true;
+            GoToModyfDateButton.IsEnabled = true;
+            CrateButton.IsEnabled = true;
+        }
+
+        private void backgroundWorkerDBCreating_Progress(object sender, ProgressChangedEventArgs e)
+        {
+            ProgressBarCreation.Value += e.ProgressPercentage;
+        }
+
+        private void creatingDBBackgroundWorker_doWork(object sender, DoWorkEventArgs e)
+        {
+
+            var worker = (BackgroundWorker)sender;
             using (var createDB = new BudgetContext())
             {
                 if (!createDB.Database.Exists())
@@ -75,6 +118,8 @@ namespace Project2
                             createDB.Transporty.Add(transport);
                             createDB.Ubranki.Add(clothes);
                             createDB.Zdrowia.Add(health);
+                            worker.ReportProgress(1);
+
                         }
                     }
                     MessageBox.Show("Baza danych została utworzona :)", "Komunikat", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -83,29 +128,45 @@ namespace Project2
                     createDB.SaveChanges();
                     return;
                 }
-                else 
+                else
                 {
                     MessageBox.Show("Baza danych jest już utworzona :)", "Komunikat", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
 
+        /// <summary>
+        /// Przejscie do innych funkcjonalności
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         //https://www.altcontroldelete.pl/artykuly/implementacja-backgroundworker-w-wpf/
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //progres bar do naprawy
-            BackgroundWorker worker = new BackgroundWorker();
-            worker.DoWork += backgroundWorker_DoWork;
-            worker.ProgressChanged += backgroundWorker_ProgressChanged;
-            worker.RunWorkerCompleted += backgroundWorker_TaskCompleted;
-            worker.WorkerReportsProgress = true;
-            GoToDataButton.IsEnabled = false;
-            GoToModyfDateButton.IsEnabled = false;
-            CrateButton.IsEnabled = false;
-            //var check = new Check();
-            //check.Show();
-            //this.Close();
-            worker.RunWorkerAsync();
+            using(var db= new BudgetContext())
+            {
+                if (db.Database.Exists())
+                {
+                    BackgroundWorker worker = new BackgroundWorker();
+                    worker.DoWork += backgroundWorker_DoWork;
+                    worker.ProgressChanged += backgroundWorker_ProgressChanged;
+                    worker.RunWorkerCompleted += backgroundWorker_TaskCompleted;
+                    worker.WorkerReportsProgress = true;
+                    GoToDataButton.IsEnabled = false;
+                    GoToModyfDateButton.IsEnabled = false;
+                    CrateButton.IsEnabled = false;
+                    //var check = new Check();
+                    //check.Show();
+                    //this.Close();
+                    worker.RunWorkerAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Zanim przejdziesz do przeglądu bazy danych, utwórz ją :)","Mały problem",MessageBoxButton.OK,MessageBoxImage.Information);
+                }
+      
+            }
 
         }
 
@@ -134,9 +195,22 @@ namespace Project2
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            InsertDate insert = new InsertDate();
-            insert.Show();
-            this.Close();
+            using (var db = new BudgetContext())
+            {
+                if (db.Database.Exists())
+                {
+                    InsertDate insert = new InsertDate();
+                    insert.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Zanim przejdziesz do przeglądu bazy danych, utwórz ją :)", "Mały problem", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
+            }
+
+           
         }
     }
 }

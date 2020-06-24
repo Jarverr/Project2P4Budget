@@ -50,6 +50,14 @@
                     <ComboBox Name="Year" Padding="2" Margin="5 0" MinWidth="100"   SelectedValuePath="Tag" SelectionChanged="SelectionChanged" >
                         <ComboBoxItem Content="2020" Tag="2020"/>
                         <ComboBoxItem Content="2021" Tag="2021"/>
+                        <ComboBoxItem Content="2022" Tag="2022"/>
+                        <ComboBoxItem Content="2023" Tag="2023"/>
+                        <ComboBoxItem Content="2024" Tag="2024"/>
+                        <ComboBoxItem Content="2025" Tag="2025"/>
+                        <ComboBoxItem Content="2026" Tag="2026"/>
+                        <ComboBoxItem Content="2027" Tag="2027"/>
+                        <ComboBoxItem Content="2028" Tag="2028"/>
+                        <ComboBoxItem Content="2029" Tag="2029"/>
                     </ComboBox>
                     <ComboBox Name="Month" Padding="2" Margin="5 0" MinWidth="100"   SelectedValuePath="Tag" SelectionChanged="SelectionChanged">
                         <ComboBoxItem Tag="1">Styczeń</ComboBoxItem>

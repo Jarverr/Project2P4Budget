@@ -8,7 +8,7 @@
         Title="Hello there :)" Height="450" Width="800"
         Style="{DynamicResource WindowStyle}">
         <StackPanel>
-            <Label Content="Dzień dobry! :) Dobrze Cię widzieć, fajnie że jesteś - uśmiechnij się! Proszę."  FontSize="20" FontWeight="Bold" FontFamily="Book Antiqua" Margin="10 0"/>
+            <Label x:Name="WelcomeLabel" Content=""  FontSize="20" FontWeight="Bold" FontFamily="Book Antiqua" Margin="10 0"/>
             <Label x:Name="TitleOfProgram" Content="Budżet domowy " Margin="0 0 0 25" FontWeight="Heavy" FontSize="15" Background="LightGray"></Label>
             <Grid>
                 <Grid.ColumnDefinitions>

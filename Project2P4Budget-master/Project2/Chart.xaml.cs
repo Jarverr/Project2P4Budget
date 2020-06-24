@@ -120,19 +120,19 @@ namespace Project2
             //RectSavings.Width= WidthForRect.Width.Value;
             //RectTelecomunication.Width= WidthForRect.Width.Value;
             //RectTransport.Width= WidthForRect.Width.Value;
-            RectChildren.Width = 400 / 13;
-            RectCloathes.Width = 400 / 13;
-            RectDebts.Width = 400 / 13;
-            RectDiffrent.Width = 400 / 13;
-            RectEntertaiment.Width = 400 / 13;
-            RectFlat.Width = 400 / 13;
-            RectFood.Width = 400 / 13;
-            RectHealth.Width = 400 / 13;
-            RectHygiene.Width = 400 / 13;
-            RectProfit.Width = 400 / 13;
-            RectSavings.Width = 400 / 13;
-            RectTelecomunication.Width = 400 / 13;
-            RectTransport.Width = 400 / 13;
+            RectChildren.Width = (WindowName.Width-10-130/*Legend.Width*/) / 13;
+            RectCloathes.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectDebts.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectDiffrent.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectEntertaiment.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectFlat.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectFood.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectHealth.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectHygiene.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectProfit.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectSavings.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectTelecomunication.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectTransport.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
         }
 
         private void CheckView_Clicked(object sender, RoutedEventArgs e)
@@ -264,6 +264,25 @@ namespace Project2
             {
                 DrawingChart(date);
             }
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            
+            RectChildren.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectCloathes.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectDebts.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectDiffrent.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectEntertaiment.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectFlat.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectFood.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectHealth.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectHygiene.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectProfit.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectSavings.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectTelecomunication.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+            RectTransport.Width = (WindowName.Width - 10 - 130/*Legend.Width*/) / 13;
+
         }
     }
 }
