@@ -1,3 +1,6 @@
 https://www.youtube.com/watch?v=xUwk2-_tRzo
 https://www.youtube.com/watch?v=Vjldip84CXQ&list=PLrW43fNmjaQVYF4zgsD0oL9Iv6u23PI6M <--dooogladaj
 https://www.youtube.com/watch?v=krxYDsee2cQ&list=PLS1QulWo1RIbTiFrgKi6CO5jVNDBNwHAG
+
+https://rachel53461.wordpress.com/2011/12/18/navigation-with-mvvm-2/
+https://stackoverflow.com/questions/33652707/how-to-change-view-in-wpf/33652977

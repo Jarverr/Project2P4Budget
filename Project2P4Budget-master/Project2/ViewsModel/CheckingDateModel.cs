@@ -8,7 +8,6 @@ namespace Project2.ViewsModel
 {
     public class CheckingDateModel
     {
-        public int Year { get; set; }
-        public int Month { get; set; }
+        public Budget Budget { get; set; }
     }
 }

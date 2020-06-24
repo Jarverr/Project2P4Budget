@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,17 +25,52 @@ namespace Project2
     {
         public Check()
         {
-            InitializeComponent();
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
-            timer.Start();
-        }
+            //BackgroundWorker worker = new BackgroundWorker();
+            //worker.DoWork += backgroundWorker_DoWork;
+            ////worker.ProgressChanged += backgroundWorker_ProgressChanged;
+            //worker.RunWorkerCompleted += backgroundWorker_TaskCompleted;
+            //worker.WorkerReportsProgress = true;
 
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            Clock.Text = DateTime.Now.ToLongTimeString();
+
+            //worker.RunWorkerAsync();
+            //DispatcherTimer timer = new DispatcherTimer();
+            //timer.Interval = TimeSpan.FromSeconds(1);
+            //timer.Tick += timer_Tick;
+            //timer.Start();
+            InitializeComponent();
+
         }
+        //private void backgroundWorker_TaskCompleted(object sender, RunWorkerCompletedEventArgs e)
+        //{
+        //    this.Close();
+        //}
+
+        //private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        //{
+        //    ProgressBarCreation.Value = e.ProgressPercentage;
+        //}
+
+        //private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        //{
+        //    var worker = (BackgroundWorker)sender;
+        //    Application.Current.Dispatcher.Invoke((Action)delegate //problem z wątkami SDA
+        //    {
+        //        InitializeComponent();
+        //    });
+        //    worker.ReportProgress(90);
+        //    worker.ReportProgress(100);
+        //}
+        ////view test
+
+
+
+
+
+
+        //private void timer_Tick(object sender, EventArgs e)
+        //{
+        //    Clock.Text = DateTime.Now.ToLongTimeString();
+        //}
 
         private void CheckView_Clicked(object sender, RoutedEventArgs e)
         {
@@ -128,176 +164,176 @@ namespace Project2
             LoadFromDB();
         }
 
-        private void CheckAll_Checked(object sender, RoutedEventArgs e)
-        {
-            if (CBDlugi ==null)
-                return;
+        //private void CheckAll_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    if (CBDlugi ==null)
+        //        return;
             
-            CBDlugi.IsChecked = true;
-            CBDzieci.IsChecked = true;
-            CBHigiena.IsChecked = true;
-            CBInne.IsChecked = true;
-            CBJedzenie.IsChecked = true;
-            CBMieszkanie.IsChecked = true;
-            CBPrzychody.IsChecked = true;
-            CBRozrywka.IsChecked = true;
-            CBTelekomunikacja.IsChecked = true;
-            CBTransport.IsChecked = true;
-            CBUbranie.IsChecked = true;
-            CBZdrowie.IsChecked = true;
-            CBSavings.IsChecked = true;
-        }
+        //    CBDlugi.IsChecked = true;
+        //    CBDzieci.IsChecked = true;
+        //    CBHigiena.IsChecked = true;
+        //    CBInne.IsChecked = true;
+        //    CBJedzenie.IsChecked = true;
+        //    CBMieszkanie.IsChecked = true;
+        //    CBPrzychody.IsChecked = true;
+        //    CBRozrywka.IsChecked = true;
+        //    CBTelekomunikacja.IsChecked = true;
+        //    CBTransport.IsChecked = true;
+        //    CBUbranie.IsChecked = true;
+        //    CBZdrowie.IsChecked = true;
+        //    CBSavings.IsChecked = true;
+        //}
 
  
-        private void DisplayInfo_Checked(object sender, RoutedEventArgs e)
-        {
-            if (CBSavings == null || CBInne==null)
-                return;
-            if (CBDlugi.IsChecked==false)
-            {
-                GroupDebts.Visibility = Visibility.Collapsed;
-                GroupDebtsValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupDebts.Visibility = Visibility.Visible;
-                GroupDebtsValues.Visibility = Visibility.Visible;
-            }
-            if (CBDzieci.IsChecked == false)
-            {
-                GroupChildren.Visibility = Visibility.Collapsed;
-                GroupChildrenValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupChildren.Visibility = Visibility.Visible;
-                GroupChildrenValues.Visibility = Visibility.Visible;
-            }
-            if (CBHigiena.IsChecked == false)
-            {
-                GroupHygiene.Visibility = Visibility.Collapsed;
-                GroupHygieneValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupHygiene.Visibility = Visibility.Visible;
-                GroupHygieneValues.Visibility = Visibility.Visible;
-            }
-            if (CBInne.IsChecked == false)
-            {
-                GroupDiffrent.Visibility = Visibility.Collapsed;
-                GroupDiffrentValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupDiffrent.Visibility = Visibility.Visible;
-                GroupDiffrentValues.Visibility = Visibility.Visible;
-            }
-            if (CBJedzenie.IsChecked == false)
-            {
-                GroupFood.Visibility = Visibility.Collapsed;
-                GroupFoodValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupFood.Visibility = Visibility.Visible;
-                GroupFoodValues.Visibility = Visibility.Visible;
-            }
-            if (CBMieszkanie.IsChecked == false)
-            {
-                GroupFlat.Visibility = Visibility.Collapsed;
-                GroupFlatValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupFlat.Visibility = Visibility.Visible;
-                GroupFlatValues.Visibility = Visibility.Visible;
-            }
-            if (CBPrzychody.IsChecked == false)
-            {
-                GroupProfit.Visibility = Visibility.Collapsed;
-                GroupProfitValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupProfit.Visibility = Visibility.Visible;
-                GroupProfitValues.Visibility = Visibility.Visible;
-            }
-            if (CBRozrywka.IsChecked == false)
-            {
-                GroupEntertaiment.Visibility = Visibility.Collapsed;
-                GroupEntertaimentValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupEntertaiment.Visibility = Visibility.Visible;
-                GroupEntertaimentValues.Visibility = Visibility.Visible;
-            }
-            if (CBTelekomunikacja.IsChecked == false)
-            {
-                GroupTelecomunication.Visibility = Visibility.Collapsed;
-                GroupTelecomunicationValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupTelecomunication.Visibility = Visibility.Visible;
-                GroupTelecomunicationValues.Visibility = Visibility.Visible;
-            }
-            if (CBTransport.IsChecked == false)
-            {
-                GroupTransport.Visibility = Visibility.Collapsed;
-                GroupTransportValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupTransport.Visibility = Visibility.Visible;
-                GroupTransportValues.Visibility = Visibility.Visible;
-            }
-            if (CBUbranie.IsChecked == false)
-            {
-                GroupCloathesValues.Visibility = Visibility.Collapsed;
-                GroupClothes.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupCloathesValues.Visibility = Visibility.Visible;
-                GroupClothes.Visibility = Visibility.Visible;
-            }
-            if (CBZdrowie.IsChecked == false)
-            {
-                GroupHelath.Visibility = Visibility.Collapsed;
-                GroupHelathValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupHelath.Visibility = Visibility.Visible;
-                GroupHelathValues.Visibility = Visibility.Visible;
-            }
-            if (CBSavings.IsChecked==false)
-            {
-                GroupSavings.Visibility = Visibility.Collapsed;
-                GroupSavingsValues.Visibility = Visibility.Collapsed;
-                CBAll.IsChecked = false;
-            }
-            else
-            {
-                GroupSavings.Visibility = Visibility.Visible;
-                GroupSavingsValues.Visibility = Visibility.Visible;
-            }
+        //private void DisplayInfo_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    if (CBSavings == null || CBInne==null)
+        //        return;
+        //    if (CBDlugi.IsChecked==false)
+        //    {
+        //        GroupDebts.Visibility = Visibility.Collapsed;
+        //        GroupDebtsValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupDebts.Visibility = Visibility.Visible;
+        //        GroupDebtsValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBDzieci.IsChecked == false)
+        //    {
+        //        GroupChildren.Visibility = Visibility.Collapsed;
+        //        GroupChildrenValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupChildren.Visibility = Visibility.Visible;
+        //        GroupChildrenValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBHigiena.IsChecked == false)
+        //    {
+        //        GroupHygiene.Visibility = Visibility.Collapsed;
+        //        GroupHygieneValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupHygiene.Visibility = Visibility.Visible;
+        //        GroupHygieneValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBInne.IsChecked == false)
+        //    {
+        //        GroupDiffrent.Visibility = Visibility.Collapsed;
+        //        GroupDiffrentValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupDiffrent.Visibility = Visibility.Visible;
+        //        GroupDiffrentValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBJedzenie.IsChecked == false)
+        //    {
+        //        GroupFood.Visibility = Visibility.Collapsed;
+        //        GroupFoodValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupFood.Visibility = Visibility.Visible;
+        //        GroupFoodValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBMieszkanie.IsChecked == false)
+        //    {
+        //        GroupFlat.Visibility = Visibility.Collapsed;
+        //        GroupFlatValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupFlat.Visibility = Visibility.Visible;
+        //        GroupFlatValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBPrzychody.IsChecked == false)
+        //    {
+        //        GroupProfit.Visibility = Visibility.Collapsed;
+        //        GroupProfitValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupProfit.Visibility = Visibility.Visible;
+        //        GroupProfitValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBRozrywka.IsChecked == false)
+        //    {
+        //        GroupEntertaiment.Visibility = Visibility.Collapsed;
+        //        GroupEntertaimentValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupEntertaiment.Visibility = Visibility.Visible;
+        //        GroupEntertaimentValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBTelekomunikacja.IsChecked == false)
+        //    {
+        //        GroupTelecomunication.Visibility = Visibility.Collapsed;
+        //        GroupTelecomunicationValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupTelecomunication.Visibility = Visibility.Visible;
+        //        GroupTelecomunicationValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBTransport.IsChecked == false)
+        //    {
+        //        GroupTransport.Visibility = Visibility.Collapsed;
+        //        GroupTransportValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupTransport.Visibility = Visibility.Visible;
+        //        GroupTransportValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBUbranie.IsChecked == false)
+        //    {
+        //        GroupCloathesValues.Visibility = Visibility.Collapsed;
+        //        GroupClothes.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupCloathesValues.Visibility = Visibility.Visible;
+        //        GroupClothes.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBZdrowie.IsChecked == false)
+        //    {
+        //        GroupHelath.Visibility = Visibility.Collapsed;
+        //        GroupHelathValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupHelath.Visibility = Visibility.Visible;
+        //        GroupHelathValues.Visibility = Visibility.Visible;
+        //    }
+        //    if (CBSavings.IsChecked==false)
+        //    {
+        //        GroupSavings.Visibility = Visibility.Collapsed;
+        //        GroupSavingsValues.Visibility = Visibility.Collapsed;
+        //        CBAll.IsChecked = false;
+        //    }
+        //    else
+        //    {
+        //        GroupSavings.Visibility = Visibility.Visible;
+        //        GroupSavingsValues.Visibility = Visibility.Visible;
+        //    }
 
-        }
+        //}
 
         private void Image_TouchMove(object sender, TouchEventArgs e)
         {

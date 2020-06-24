@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Project2
 {
@@ -21,6 +9,8 @@ namespace Project2
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Check check = null;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -100,20 +90,31 @@ namespace Project2
             }
         }
 
-
+        //https://www.altcontroldelete.pl/artykuly/implementacja-backgroundworker-w-wpf/
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //progres bar do naprawy
             BackgroundWorker worker = new BackgroundWorker();
             worker.DoWork += backgroundWorker_DoWork;
             worker.ProgressChanged += backgroundWorker_ProgressChanged;
-            Check check = new Check();
-            check.Show();
-            this.Close();
+            worker.RunWorkerCompleted += backgroundWorker_TaskCompleted;
+            worker.WorkerReportsProgress = true;
+            GoToDataButton.IsEnabled = false;
+            GoToModyfDateButton.IsEnabled = false;
+            CrateButton.IsEnabled = false;
+            //var check = new Check();
+            //check.Show();
+            //this.Close();
             worker.RunWorkerAsync();
+
         }
 
-    
+        private void backgroundWorker_TaskCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            check.Show();
+            this.Close();
+        }
+
         private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             ProgressBarCreation.Value = e.ProgressPercentage;
@@ -122,8 +123,13 @@ namespace Project2
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             var worker = (BackgroundWorker)sender;
-            worker.WorkerReportsProgress = true;
-            worker.ReportProgress(40);
+            //https://stackoverflow.com/questions/2329978/the-calling-thread-must-be-sta-because-many-ui-components-require-this
+            Application.Current.Dispatcher.Invoke((Action)delegate //problem z wątkami SDA
+            {
+                check = new Check();
+                worker.ReportProgress(90);
+                worker.ReportProgress(100);
+            });
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

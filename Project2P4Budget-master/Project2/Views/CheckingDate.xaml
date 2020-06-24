@@ -27,157 +27,423 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" >
-                    <!--Przychody-->
+                    <StackPanel x:Name="GroupProfit" >
+                        <TextBlock Text="Przychody: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Wynagrodzenie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Wynagrodzenie partnera(-ki): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Premia: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Przychody z premii bankowych: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Odsetki bankowe: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Sprzedaż Allegro (itp): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne przychody (itp): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
 
-                    <TextBlock Text="Przychody: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Wynagrodzenie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Wynagrodzenie partnera(-ki): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Premia: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Przychody z premii bankowych: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Odsetki bankowe: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Sprzedaż Allegro (itp): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne przychody (itp): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
 
-                    <!--Jedzenie -->
-                    <TextBlock Text="Jedzenie: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Jedzenie dom: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Jedzenie miasto: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Jedzenie praca: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Alkohol: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    <!--Jedzenie-->
 
-                    <!--Mieszkanie -->
-                    <TextBlock Text="Mieszkanie: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Czynsz: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Woda i kanalizacja: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Prąd: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Gaz: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Ogrzewanie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Wywóz śmieci: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Konserwacja i naprawy: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Wyposażenie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Ubezpieczenie nieruchomości: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+                    <StackPanel x:Name="GroupFood">
+                        <TextBlock Text="Jedzenie: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Jedzenie dom: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Jedzenie miasto: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Jedzenie praca: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Alkohol: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
+
+                    <!--Mieszkanie-->
+
+
+                    <StackPanel x:Name="GroupFlat">
+                        <TextBlock Text="Mieszkanie: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Czynsz: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Woda i kanalizacja: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Prąd: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Gaz: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Ogrzewanie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Wywóz śmieci: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Konserwacja i naprawy: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Wyposażenie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Ubezpieczenie nieruchomości: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Transport-->
-                    <TextBlock Text="Transport: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Paliwo do auta: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Przegląd i naprawa auta: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Wyposażenie dodatkowe (opony): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Ubezpiecznie samochodu: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Bilet komunikacji miejskiej: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Bilet PKS/ PKP: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Taxi: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+
+                    <StackPanel x:Name="GroupTransport">
+                        <TextBlock Text="Transport: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Paliwo do auta: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Przegląd i naprawa auta: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Wyposażenie dodatkowe (opony): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Ubezpiecznie samochodu: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Bilet komunikacji miejskiej: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Bilet PKS/ PKP: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Taxi: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Telekomunikacja-->
-                    <TextBlock Text="Telekomunikacja: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Telefon 1: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Telefon 2: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="TV: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Internet: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+
+                    <StackPanel x:Name="GroupTelecomunication">
+                        <TextBlock Text="Telekomunikacja: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Telefon 1: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Telefon 2: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="TV: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Internet: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Opieka zdrowotna-->
-                    <TextBlock Text="Opieka zdrowotna: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Lekarz: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Badania: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Lekarstwa: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+
+                    <StackPanel x:Name="GroupHelath">
+                        <TextBlock Text="Opieka zdrowotna: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Lekarz: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Badania: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Lekarstwa: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Ubranie-->
-                    <TextBlock Text="Ubranie: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Ubranie zwykłe: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Ubranie sportowe: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Buty: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Dodatki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+
+                    <StackPanel x:Name="GroupClothes">
+                        <TextBlock Text="Ubranie: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Ubranie zwykłe: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Ubranie sportowe: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Buty: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Dodatki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Higiena-->
-                    <TextBlock Text="Higiena: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Kosemtyki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Środki czystości (chemia): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Fryzjer: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Kosemtyczka: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+
+                    <StackPanel x:Name="GroupHygiene">
+                        <TextBlock Text="Higiena: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Kosemtyki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Środki czystości (chemia): " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Fryzjer: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Kosemtyczka: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Dzieci-->
-                    <TextBlock Text="Dzieci: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Artykuły szkolne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Dodatkowe zajęcia: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Wpłaty na szkołę: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Zabawki/ gry: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Opieka nad dziećmi: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+
+                    <StackPanel x:Name="GroupChildren">
+                        <TextBlock Text="Dzieci: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Artykuły szkolne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Dodatkowe zajęcia: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Wpłaty na szkołę: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Zabawki/ gry: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Opieka nad dziećmi: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Rozrywka-->
-                    <TextBlock Text="Rozrywka: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Siłownia/ basen: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Kino/ teartr: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Koncerty: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Czasopisma: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Książki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Hobby: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Hotel/ Turystyka: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+
+                    <StackPanel x:Name="GroupEntertaiment">
+                        <TextBlock Text="Rozrywka: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Siłownia/ basen: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Kino/ teartr: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Koncerty: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Czasopisma: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Książki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Hobby: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Hotel/ Turystyka: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Inne wydatki-->
-                    <TextBlock Text="Inne wydatki: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Dobroczynność: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Prezenty: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Sprzęt RTV: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Oprogramowanie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Edukacje/ szkolenia: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Usługi inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Podatki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+
+
+                    <StackPanel x:Name="GroupDiffrent">
+                        <TextBlock Text="Inne wydatki: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Dobroczynność: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Prezenty: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Sprzęt RTV: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Oprogramowanie: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Edukacje/ szkolenia: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Usługi inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Podatki: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Spłata długów-->
-                    <TextBlock Text="Spłata długów: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Kredyt hipoteczny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 10 10 0"/>
-                    <TextBlock Text="Kredyt konsumpcyjny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 10 10 0"/>
-                    <TextBlock Text="Pożyczka osobista: " FontSize="12"  HorizontalAlignment="Right" Margin="0 10 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 10 10 0"/>
+
+
+                    <StackPanel x:Name="GroupDebts">
+                        <TextBlock Text="Spłata długów: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Kredyt hipoteczny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Kredyt konsumpcyjny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Pożyczka osobista: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
+
 
                     <!--Budowanie oszczędności-->
-                    <TextBlock Text="Budowanie oszczędności: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
-                    <TextBlock Text="Fundusz awaryjny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
-                    <TextBlock Text="Fundusz wydatków nieregularnych: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Podusza finansowa: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Konto emerytalne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Nadpłata długów: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Fundusz wakacyjny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Fundusz prezentów świątecznych: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
-                    <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
 
 
+                    <StackPanel x:Name="GroupSavings">
+                        <TextBlock Text="Budowanie oszczędności: " FontSize="15" FontWeight="Bold" Margin="20 0 0 0"/>
+                        <TextBlock Text="Fundusz awaryjny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 3 10 0"/>
+                        <TextBlock Text="Fundusz wydatków nieregularnych: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Podusza finansowa: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Konto emerytalne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Nadpłata długów: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Fundusz wakacyjny: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Fundusz prezentów świątecznych: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                        <TextBlock Text="Inne: " FontSize="12"  HorizontalAlignment="Right" Margin="0 0 10 0"/>
+                    </StackPanel>
                 </StackPanel>
 
                 <!-- kwoty -->
                 <StackPanel Grid.Column="1">
-                    <!-- przychody -->
-                    <TextBlock x:Name="TextBlockProfit" Margin="0 22 0 0" />
-                    <TextBlock Text="test"/>
-                    <TextBlock Text="test"/>
-                    <TextBlock Text="test"/>
-                    <TextBlock Text="test"/>
-                    <TextBlock Text="test"/>
-                    <TextBlock Text="test"/>
+                    <!--przychody-->
+                    <StackPanel x:Name="GroupProfitValues">
+                        <ItemsControl ItemsSource="{Binding}" >
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Przychody.Wynagrodzenie}" Margin="0 24 0 0" />
+                                        <TextBlock Text="{Binding Przychody.WynagrodzeniePartnera}" />
+                                        <TextBlock Text="{Binding Przychody.Premia}" />
+                                        <TextBlock Text="{Binding Przychody.PrzychodyZPremiiBankowych}" />
+                                        <TextBlock Text="{Binding Przychody.OdsetkiBankowe}" />
+                                        <TextBlock Text="{Binding Przychody.SprzedazAllegro}" />
+                                        <TextBlock Text="{Binding Przychody.Inne}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+
+
 
                     <!--jedzenie-->
-                    <TextBlock Text="test" Margin="0 22 0 0" />
-                    <TextBlock Text="test" />
-                    <TextBlock Text="test" />
-                    <TextBlock Text="test" />
-                    <TextBlock Text="test" />
+                    <StackPanel x:Name="GroupFoodValues">
+                        <TextBlock Text="{Binding Jedzenie.JedzenieDom}" Margin="0 24 0 0" />
+
+                        <ItemsControl ItemsSource="{Binding }" >
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Jedzenie.JedzenieMiasto}" />
+                                        <TextBlock Text="{Binding Jedzenie.JedzeniePraca}" />
+                                        <TextBlock Text="{Binding Jedzenie.Alkohol}" />
+                                        <TextBlock Text="{Binding Jedzenie.Inne}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+
+
+
+
 
                     <!--Mieszkanie-->
-                    <TextBlock Text="test" Margin="0 22 0 0" />
-                    <TextBlock Text="test" />
-                    <TextBlock Text="test" />
-                    <TextBlock Text="test" />
-                    <TextBlock Text="test" />
 
+                    <StackPanel x:Name="GroupFlatValues">
+                        <TextBlock Text="{Binding Mieszkanie.Czynsz}" Margin="0 23 0 0" />
+                        <TextBlock Text="{Binding Mieszkanie.WodaKanalizacja}" />
+                        <TextBlock Text="{Binding Mieszkanie.Prad}" />
+                        <TextBlock Text="{Binding Mieszkanie.Gaz}" />
+                        <TextBlock Text="{Binding Mieszkanie.Ogrzewanie}" />
+                        <TextBlock Text="{Binding Mieszkanie.Smieci}" />
+                        <TextBlock Text="{Binding Mieszkanie.KonserwacjeNaprawy}" />
+                        <TextBlock Text="{Binding Mieszkanie.Wyposazenie}" />
+                        <TextBlock Text="{Binding Mieszkanie.UbezpieczenieNieruchomosci}" />
+                        <TextBlock Text="{Binding Mieszkanie.Inne}" />
+                    </StackPanel>
+
+                    <!--Transport-->
+                    <!--<ListBox ItemsSource="{Binding }"> -->
+                    <!--Podsiwętla wiec nie uzywam listboxa-->
+                    <!--
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Transport.PaliwoSamochod}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupTransportValues" >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Transport.PaliwoSamochod}" Margin="0 23 0 0"/>
+                                    <TextBlock Text="{Binding Transport.PrzegladNaprawa}"/>
+                                    <TextBlock Text="{Binding Transport.Wyposazenie}"/>
+                                    <TextBlock Text="{Binding Transport.DodatkoweUbezp}"/>
+                                    <TextBlock Text="{Binding Transport.BiletyKomunikacjiMiejskiej}"/>
+                                    <TextBlock Text="{Binding Transport.BiletyPKPPKS}"/>
+                                    <TextBlock Text="{Binding Transport.Taxi}"/>
+                                    <TextBlock Text="{Binding Transport.Inne}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+
+                    <!--Telekomunikacja-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupTelecomunicationValues">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Telekomunikacja.Telefon1}" Margin="0 23 0 0"/>
+                                    <TextBlock Text="{Binding Telekomunikacja.Telefon2}"/>
+                                    <TextBlock Text="{Binding Telekomunikacja.Tv}"/>
+                                    <TextBlock Text="{Binding Telekomunikacja.Internet}"/>
+                                    <TextBlock Text="{Binding Telekomunikacja.Inne}"/>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <!--Opieka zdrowotna-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupHelathValues">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Zdrowie.Lekarz}" Margin="0 23 0 0"/>
+                                    <TextBlock Text="{Binding Zdrowie.Badania}"/>
+                                    <TextBlock Text="{Binding Zdrowie.Lekarstwa}"/>
+                                    <TextBlock Text="{Binding Zdrowie.Inne}"/>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <!--Ubrania-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupCloathesValues">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Ubrania.ZwykleUbrania}" Margin="0 22 0 0"/>
+                                    <TextBlock Text="{Binding Ubrania.SportoweUbrania}"/>
+                                    <TextBlock Text="{Binding Ubrania.Buty}"/>
+                                    <TextBlock Text="{Binding Ubrania.Dodatki}"/>
+                                    <TextBlock Text="{Binding Ubrania.Inne}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <!--Higienia-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupHygieneValues">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Higiena.Kosmetyki}" Margin="0 22 0 0"/>
+                                    <TextBlock Text="{Binding Higiena.SrodkiCzystosci}"/>
+                                    <TextBlock Text="{Binding Higiena.Fryzjer}"/>
+                                    <TextBlock Text="{Binding Higiena.Kosmetyczka}"/>
+                                    <TextBlock Text="{Binding Higiena.Inne}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <!--Dzieci-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupChildrenValues">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Dzieci.ArtykulySzkolne}" Margin="0 22 0 0"/>
+                                    <TextBlock Text="{Binding Dzieci.DodatkoweZajecia}"/>
+                                    <TextBlock Text="{Binding Dzieci.WplatyNaSzkole}"/>
+                                    <TextBlock Text="{Binding Dzieci.ZabawkiGry}"/>
+                                    <TextBlock Text="{Binding Dzieci.OpiekaNadDziecmi}"/>
+                                    <TextBlock Text="{Binding Dzieci.Inne}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <!--Rozrywka-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupEntertaimentValues">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Rozrywka.SilowniaBasen}" Margin="0 23 0 0"/>
+                                    <TextBlock Text="{Binding Rozrywka.Koncerty}"/>
+                                    <TextBlock Text="{Binding Rozrywka.KinoTeatr}"/>
+                                    <TextBlock Text="{Binding Rozrywka.Czasopisma}"/>
+                                    <TextBlock Text="{Binding Rozrywka.Ksiazki}"/>
+                                    <TextBlock Text="{Binding Rozrywka.Hobby}"/>
+                                    <TextBlock Text="{Binding Rozrywka.Hotel}"/>
+                                    <TextBlock Text="{Binding Rozrywka.Inne}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <!--Inne wydatki-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupDiffrentValues">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding InneWydatki.Dobroczynnosc}" Margin="0 23 0 0"/>
+                                    <TextBlock Text="{Binding InneWydatki.Prezenty}"/>
+                                    <TextBlock Text="{Binding InneWydatki.RTVAGD}"/>
+                                    <TextBlock Text="{Binding InneWydatki.Oprogramowanie}"/>
+                                    <TextBlock Text="{Binding InneWydatki.EdukacjaSzkolenia}"/>
+                                    <TextBlock Text="{Binding InneWydatki.Uslugi}"/>
+                                    <TextBlock Text="{Binding InneWydatki.Podatki}"/>
+                                    <TextBlock Text="{Binding InneWydatki.Inne}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <!--Spłata długow-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupDebtsValues">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Dlugi.KredytHipoteczny}" Margin="0 23 0 0"/>
+                                    <TextBlock Text="{Binding Dlugi.KredytKonsumpcyjny}"/>
+                                    <TextBlock Text="{Binding Dlugi.PozyczkaOsobista}"/>
+                                    <TextBlock Text="{Binding Dlugi.Inne}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <!--Budowanie oszczedności-->
+                    <ItemsControl ItemsSource="{Binding }" x:Name="GroupSavingsValues">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding BudowanieOszczednosci.FunduszAwaryjny}" Margin="0 23 0 0"/>
+                                    <TextBlock Text="{Binding BudowanieOszczednosci.FunduszWydatkówNieregularnych}"/>
+                                    <TextBlock Text="{Binding BudowanieOszczednosci.PoduszkaFinansowa}"/>
+                                    <TextBlock Text="{Binding BudowanieOszczednosci.KontoEmerytalne}"/>
+                                    <TextBlock Text="{Binding BudowanieOszczednosci.NadpłataDlugow}"/>
+                                    <TextBlock Text="{Binding BudowanieOszczednosci.FunduszWakacyjny}"/>
+                                    <TextBlock Text="{Binding BudowanieOszczednosci.FunduszPrezentySwiateczne}"/>
+                                    <TextBlock Text="{Binding BudowanieOszczednosci.Inne}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </StackPanel>
 
 
@@ -188,19 +454,22 @@
         <!-- Filtry -->
         <StackPanel Grid.Column="1" Orientation="Vertical"  >
             <TextBlock Text="Filtry: " FontSize="13" Margin="0 0 0 10" />
-            <CheckBox Content="Zaznacz wszystkie" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Przychody" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Jedzenie" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Transport" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Mieszkanie" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Telekomunikacja" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Zdrowie" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Ubranie" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Higiena" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Dzieci" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Rozrywka" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Długi" Margin="5 0 0 0" IsChecked="True"/>
-            <CheckBox Content="Inne" Margin="5 0 0 0" IsChecked="True"/>
+            <CheckBox x:Name="CBAll" Content="Zaznacz wszystkie" Margin="5 0 0 0" IsChecked="True" Checked="CheckAll_Checked" />
+            <CheckBox x:Name="CBPrzychody" Content="Przychody" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBJedzenie" Content="Jedzenie" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBTransport" Content="Transport" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBMieszkanie" Content="Mieszkanie" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBTelekomunikacja" Content="Telekomunikacja" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked"  Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBZdrowie" Content="Zdrowie" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBUbranie" Content="Ubranie" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBHigiena" Content="Higiena" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBDzieci" Content="Dzieci" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBRozrywka" Content="Rozrywka" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBDlugi" Content="Długi" Margin="5 0 0 0" IsChecked="True"  Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBInne" Content="Inne" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <CheckBox x:Name="CBSavings" Content="Budowanie oszczędności" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
+            <TextBlock x:Name="Clock"  FontSize="20" Margin="0 30 0 0" HorizontalAlignment="Center"/>
+
 
         </StackPanel>
     </Grid>
