@@ -20,7 +20,7 @@ namespace Project2
     /// </summary>
     public partial class InsertDate : Window
     {
-        private Budget budget;
+        private readonly Budget budget;
         public InsertDate()
         {
             InitializeComponent();
@@ -36,20 +36,22 @@ namespace Project2
                     Month.SelectedValue = i;
                 }
             }
-            budget = new Budget();
-            budget.BudowanieOszczednosci = new BudowanieOszczednosci();
-            budget.Dlugi = new Dlugi();
-            budget.Dzieci = new Dzieci();
-            budget.Higiena = new Higiena();
-            budget.InneWydatki = new InneWydatki();
-            budget.Jedzenie = new Jedzenie();
-            budget.Mieszkanie = new Mieszkanie();
-            budget.Przychody = new Przychody();
-            budget.Rozrywka = new Rozrywka();
-            budget.Telekomunikacja = new Telekomunikacja();
-            budget.Transport = new Transport();
-            budget.Ubrania = new Ubrania();
-            budget.Zdrowie = new Zdrowie();
+            budget = new Budget
+            {
+                BudowanieOszczednosci = new BudowanieOszczednosci(),
+                Dlugi = new Dlugi(),
+                Dzieci = new Dzieci(),
+                Higiena = new Higiena(),
+                InneWydatki = new InneWydatki(),
+                Jedzenie = new Jedzenie(),
+                Mieszkanie = new Mieszkanie(),
+                Przychody = new Przychody(),
+                Rozrywka = new Rozrywka(),
+                Telekomunikacja = new Telekomunikacja(),
+                Transport = new Transport(),
+                Ubrania = new Ubrania(),
+                Zdrowie = new Zdrowie()
+            };
 
             DataContext = budget;
         }
@@ -662,7 +664,7 @@ namespace Project2
                 {
                     if (item2.GetType()==typeof(TextBox))
                     {
-                        ((TextBox)item2).Text = string.Empty;
+                        ((TextBox)item2).Text = 0.ToString();
                     }
                 }
             }
@@ -695,8 +697,8 @@ namespace Project2
             }
         }
 
-        DispatcherTimer timer = new DispatcherTimer();
-        DispatcherTimer timer2 = new DispatcherTimer();
+        readonly DispatcherTimer timer = new DispatcherTimer();
+        readonly DispatcherTimer timer2 = new DispatcherTimer();
         int counter=0;
 
         private void dispacherTimer_Ticked(object sender, EventArgs e)

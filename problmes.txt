@@ -1,0 +1,2 @@
+-background worker dla tworzenia nowej instacji
+-view i przełączanie miedzy nimi

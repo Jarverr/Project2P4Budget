@@ -7,6 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Loaded="Window_Loaded">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="ClockLayout">
+            <Setter Property="Control.Background" Value="Beige"/> <!--czemu to nie działa-->
+            <Setter Property="Control.FontSize" Value="20"/>
+            <Setter Property="Control.Padding" Value="2"/>
+            <Setter Property="Control.BorderBrush" Value="Black" />
+            <Setter Property="Control.BorderThickness" Value="10" />
+            <Setter Property="Control.FontWeight" Value="Bold" />
+        </Style>
+    </UserControl.Resources>
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8*"></ColumnDefinition>
@@ -468,7 +478,7 @@
             <CheckBox x:Name="CBDlugi" Content="Długi" Margin="5 0 0 0" IsChecked="True"  Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
             <CheckBox x:Name="CBInne" Content="Inne" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
             <CheckBox x:Name="CBSavings" Content="Budowanie oszczędności" Margin="5 0 0 0" IsChecked="True" Checked="DisplayInfo_Checked" Unchecked="DisplayInfo_Checked"/>
-            <TextBlock x:Name="Clock"  FontSize="20" Margin="0 30 0 0" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="Clock"  Margin="0 30 0 0"  HorizontalAlignment="Center" Style="{StaticResource ClockLayout}"/>
 
 
         </StackPanel>

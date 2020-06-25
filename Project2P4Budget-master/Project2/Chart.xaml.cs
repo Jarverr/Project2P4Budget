@@ -41,7 +41,13 @@ namespace Project2
         {
             var maxHeight = ChartPlace.MaxHeight;  //gdy nie ustawie recznie heighta to daje 0 :C
             decimal actualHeight;
+            decimal height=0;
             Decimal.TryParse(ChartPlace.Height.ToString(), out actualHeight);
+            foreach (var item in date)
+            {
+                if (height < item.Value)
+                    height = item.Value;
+            }
 
             if (date["Children"] != 0)
                 RectChildren.Height = (double)(actualHeight * date["Children"] / date["Total"]);
